@@ -1,7 +1,7 @@
 // import React from "react";
 import Header from "../Header/Header";
 // import { Wrapper, WrapperBody, Main, GlobalStyle, BottomBlock } from "./Layout.styled";
-import { Wrapper, WrapperBody } from "./Layout.styled";
+import { Wrapper, WrapperBody, Main, BottomBlock } from "./Layout.styled";
 // import Footer from "../Footer/Footer";
 // import Loading from "../Generic/Loading/Loading";
 // import { useSelector } from "react-redux";
@@ -36,7 +36,10 @@ const Layout = (props) => {
     <Wrapper>
       <WrapperBody>
         <Header />
-        <div> {props.children} </div>
+        <Main>
+          {props.children}
+          <BottomBlock />
+        </Main>
       </WrapperBody>
     </Wrapper>
   );
