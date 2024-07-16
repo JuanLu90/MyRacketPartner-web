@@ -2,7 +2,7 @@
 import Header from "../Header/Header";
 // import { Wrapper, WrapperBody, Main, GlobalStyle, BottomBlock } from "./Layout.styled";
 import { Wrapper, WrapperBody, Main, BottomBlock } from "./Layout.styled";
-// import Footer from "../Footer/Footer";
+import Footer from "../Footer/Footer";
 // import Loading from "../Generic/Loading/Loading";
 // import { useSelector } from "react-redux";
 // import ToastAlert from "../Generic/ToastAlert/ToastAlert";
@@ -40,6 +40,7 @@ const Layout = (props) => {
           {props.children}
           <BottomBlock />
         </Main>
+        <Footer />
       </WrapperBody>
     </Wrapper>
   );
