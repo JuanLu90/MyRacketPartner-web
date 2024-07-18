@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { matches } from "../../redux/slices/matchesSlice";
+import Match from "../Match/Match";
 // import Tournament from "../Generic/Tournament/Tournament";
 
 const Home = () => {
@@ -26,7 +27,7 @@ const Home = () => {
   }, [dispatch]);
 
   const matchesList = useSelector((state) => state.matches.matches);
-  console.log(matchesList);
+
   const grouped = Object.values(matchesList).reduce((acc, matchs) => {
     const matchID = matchs[0].matchID;
 
@@ -68,11 +69,17 @@ const Home = () => {
     match.matchWinner = matchWinner;
   });
 
-  console.log(Object.values(grouped));
+  const matchesGrouped = Object.values(grouped);
+
+  return (
+    <div>
+      {matchesGrouped.map((match, i) => (
+        <Match match={match} key={i} />
+      ))}
+    </div>
+  );
 
   // return <Tournament matchesList={Object.values(grouped)} />;
-
-  return <div>HOMEEEE</div>;
 };
 
 export default Home;
