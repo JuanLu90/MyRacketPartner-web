@@ -2,7 +2,8 @@ import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { matches } from "../../redux/slices/matchesSlice";
 import Match from "../Match/Match";
-// import Tournament from "../Generic/Tournament/Tournament";
+import { WrapperTitle } from "./Home.styled";
+import { FriendlyIcon } from "./Home.styled";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -73,13 +74,15 @@ const Home = () => {
 
   return (
     <div>
+      <WrapperTitle>
+        <FriendlyIcon />
+        <h3> Friendly Matches</h3>
+      </WrapperTitle>
       {matchesGrouped.map((match, i) => (
         <Match match={match} key={i} />
       ))}
     </div>
   );
-
-  // return <Tournament matchesList={Object.values(grouped)} />;
 };
 
 export default Home;
