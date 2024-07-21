@@ -9,9 +9,11 @@ import {
   Result,
   EditIcon,
   WrapperEdit,
+  PlayerDefaultIcon,
 } from "./Match.styled";
 import EditMatchImg from "../../images/edit.png";
 import { formatDate, formatHour } from "../../utils/dateUtil";
+import UserDefaultImg from "../../images/user-default.png";
 
 const Match = (props) => {
   const {
@@ -59,9 +61,11 @@ const Match = (props) => {
         <Separator />
         <PlayersWrapper>
           <PlayerStyled winner={matchWinner === player1ID}>
+            <PlayerDefaultIcon src={UserDefaultImg} />
             {player1Name}
           </PlayerStyled>
           <PlayerStyled winner={matchWinner === player2ID}>
+            <PlayerDefaultIcon src={UserDefaultImg} />
             {player2Name}
           </PlayerStyled>
         </PlayersWrapper>

@@ -52,6 +52,8 @@ export const PlayersWrapper = styled.div`
 `;
 
 export const PlayerStyled = styled.span`
+  display: flex;
+  align-items: center;
   font-weight: ${(props) => props.winner && "bold"};
   white-space: nowrap;
   overflow: hidden;
@@ -77,4 +79,9 @@ export const WrapperEdit = styled.div`
 
 export const EditIcon = styled.img`
   width: 17px;
+`;
+
+export const PlayerDefaultIcon = styled.img`
+  height: 1.35rem;
+  margin-right: 10px;
 `;
