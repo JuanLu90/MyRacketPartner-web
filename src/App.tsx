@@ -1,12 +1,15 @@
-import Home from "./components/Home/Home";
-import Layout from "./components/Layout/Layout";
+import { Routes, Route, BrowserRouter as Router } from "react-router-dom";
+import UserRoutes from "./routes/Routes";
+// import "./config/i18n";
 
-function App() {
+const App = () => {
   return (
-    <Layout>
-      <Home />
-    </Layout>
+    <Router>
+      <Routes>
+        <Route path="*" element={<UserRoutes />} />
+      </Routes>
+    </Router>
   );
-}
+};
 
 export default App;

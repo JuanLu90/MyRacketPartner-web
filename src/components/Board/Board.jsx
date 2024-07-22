@@ -2,10 +2,9 @@ import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { matches } from "../../redux/slices/matchesSlice";
 import Match from "../Match/Match";
-import { WrapperTitle } from "./Home.styled";
-import { FriendlyIcon } from "./Home.styled";
+import { WrapperTitle, FriendlyIcon } from "./Board.styled";
 
-const Home = () => {
+const Board = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -85,4 +84,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Board;
