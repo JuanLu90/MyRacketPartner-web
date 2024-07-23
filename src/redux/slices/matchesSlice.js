@@ -4,6 +4,7 @@ import MatchesService from "../../services/matches.service";
 const initialState = {
   matches: [],
   matchDetails: {},
+  matchDetailsHeadToHead: [],
 };
 
 export const matches = createAsyncThunk(
@@ -33,6 +34,21 @@ export const matchDetailsAction = createAsyncThunk(
       const data = await MatchesService.matchDetails(matchId);
 
       return { matchDetails: data };
+    } catch (error) {
+      console.log(error);
+      return thunkAPI.rejectWithValue();
+    }
+  },
+);
+
+export const matchDetailsHeadToHeadAction = createAsyncThunk(
+  "matches/matchDetailsHeadToHead",
+  async (players, thunkAPI) => {
+    console.log(players);
+    try {
+      const data = await MatchesService.matchDetailsHeadToHead(players);
+
+      return { matchDetailsHeadToHead: data };
     } catch (error) {
       console.log(error);
       return thunkAPI.rejectWithValue();
