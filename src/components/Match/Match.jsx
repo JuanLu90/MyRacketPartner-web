@@ -1,4 +1,4 @@
-import React from "react";
+import { Link } from "react-router-dom";
 import {
   Wrapper,
   Date,
@@ -7,26 +7,27 @@ import {
   ResultStyled,
   Separator,
   Result,
-  EditIcon,
-  WrapperEdit,
+  // EditIcon,
+  // WrapperEdit,
   PlayerDefaultIcon,
 } from "./Match.styled";
-import EditMatchImg from "../../images/edit.png";
+// import EditMatchImg from "../../images/edit.png";
 import { formatDate, formatHour } from "../../utils/dateUtil";
 import UserDefaultImg from "../../images/user-default.png";
 
 const Match = (props) => {
   const {
     match,
-    toggleModal,
-    selectMatch,
-    manageUserAllowed,
-    adminUserID,
-    userID,
-    playerID,
+    // toggleModal,
+    // selectMatch,
+    // manageUserAllowed,
+    // adminUserID,
+    // userID,
+    // playerID,
   } = props;
 
   const {
+    matchID,
     matchWinner,
     player1ID,
     player2ID,
@@ -36,54 +37,58 @@ const Match = (props) => {
     matchDate,
   } = match;
 
-  const displayEditButton = () => {
-    let checkIfMatchEditable = false;
+  // const displayEditButton = () => {
+  //   let checkIfMatchEditable = false;
 
-    if (userID === adminUserID) checkIfMatchEditable = true;
-    else if (
-      manageUserAllowed &&
-      (player1ID === playerID || player2ID === playerID)
-    ) {
-      checkIfMatchEditable = true;
-    }
+  //   if (userID === adminUserID) checkIfMatchEditable = true;
+  //   else if (
+  //     manageUserAllowed &&
+  //     (player1ID === playerID || player2ID === playerID)
+  //   ) {
+  //     checkIfMatchEditable = true;
+  //   }
 
-    return checkIfMatchEditable;
-  };
-  console.log(matchDate);
+  //   return checkIfMatchEditable;
+  // };
+
   return (
     // <Wrapper isEditable={displayEditButton()}>
-    <Wrapper>
-      <div>
-        <Date>
-          <span>{formatDate(matchDate)}</span>
-          <span>{formatHour(matchDate)}</span>
-        </Date>
-        <Separator />
-        <PlayersWrapper>
-          <PlayerStyled winner={matchWinner === player1ID}>
-            <PlayerDefaultIcon src={UserDefaultImg} />
-            {player1Name}
-          </PlayerStyled>
-          <PlayerStyled winner={matchWinner === player2ID}>
-            <PlayerDefaultIcon src={UserDefaultImg} />
-            {player2Name}
-          </PlayerStyled>
-        </PlayersWrapper>
-        <Result>
-          {sets.map((set, i) => {
-            return (
-              <div key={i}>
-                <ResultStyled winner={set.player1Score > set.player2Score}>
-                  {set.player1Score}
-                </ResultStyled>
-                <ResultStyled winner={set.player1Score < set.player2Score}>
-                  {set.player2Score}
-                </ResultStyled>
-              </div>
-            );
-          })}
-        </Result>
-        {/* {displayEditButton() && (
+    <Link
+      to={`/match/${matchID}`}
+      style={{ textDecoration: "none", color: "inherit" }}
+    >
+      <Wrapper>
+        <div>
+          <Date>
+            <span>{formatDate(matchDate)}</span>
+            <span>{formatHour(matchDate)}</span>
+          </Date>
+          <Separator />
+          <PlayersWrapper>
+            <PlayerStyled winner={matchWinner === player1ID}>
+              <PlayerDefaultIcon src={UserDefaultImg} />
+              {player1Name}
+            </PlayerStyled>
+            <PlayerStyled winner={matchWinner === player2ID}>
+              <PlayerDefaultIcon src={UserDefaultImg} />
+              {player2Name}
+            </PlayerStyled>
+          </PlayersWrapper>
+          <Result>
+            {sets.map((set, i) => {
+              return (
+                <div key={i}>
+                  <ResultStyled winner={set.player1Score > set.player2Score}>
+                    {set.player1Score}
+                  </ResultStyled>
+                  <ResultStyled winner={set.player1Score < set.player2Score}>
+                    {set.player2Score}
+                  </ResultStyled>
+                </div>
+              );
+            })}
+          </Result>
+          {/* {displayEditButton() && (
           <>
             <Separator />
             <WrapperEdit>
@@ -97,8 +102,9 @@ const Match = (props) => {
             </WrapperEdit>
           </>
         )} */}
-      </div>
-    </Wrapper>
+        </div>
+      </Wrapper>
+    </Link>
   );
 };
 

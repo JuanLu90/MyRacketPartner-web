@@ -48,10 +48,9 @@ const UserRoutes = () => {
                 key={path}
                 path={path}
                 element={
-                  <Component />
-                  // <Suspense fallback={<Loading />}>
-                  //   <Component />
-                  // </Suspense>
+                  <Suspense fallback={<div> Loading ...</div>}>
+                    <Component />
+                  </Suspense>
                 }
               />
             );
