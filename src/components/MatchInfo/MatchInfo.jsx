@@ -1,10 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import {
-  matchDetailsAction,
-  matchDetailsHeadToHeadAction,
-} from "../../redux/slices/matchesSlice";
+import { matchDetailsAction } from "../../redux/slices/matchesSlice";
 import UserDefaultImg from "../../images/user-default.png";
 import {
   UserDefaultIcon,
@@ -13,12 +10,9 @@ import {
   Result,
   WrapperOptions,
   Option,
-  PlayersWrapper,
-  PlayerStyled,
-  ResultStyled,
-  WrapperScore,
-  ResultScore,
 } from "./MatchInfo.styled";
+import HeadToHead from "../Match/Options/HeadToHead/HeadToHead";
+import Score from "../Match/Options/Score/Score";
 
 const MatchInfo = () => {
   const dispatch = useDispatch();
@@ -28,19 +22,9 @@ const MatchInfo = () => {
     useState("Marcador");
 
   const matchDetails = useSelector((state) => state.matches.matchDetails);
-  const matchDetailsHeadToHead = useSelector(
-    (state) => state.matches.matchDetailsHeadToHead,
-  );
-  console.log(matchDetails);
-  console.log(matchDetailsHeadToHead);
-  const {
-    winnerId,
-    player1,
-    player2,
-    totalSetsPlayer1,
-    totalSetsPlayer2,
-    sets,
-  } = matchDetails;
+
+  const { winnerId, player1, player2, totalSetsPlayer1, totalSetsPlayer2 } =
+    matchDetails;
 
   useEffect(() => {
     const getMatcheDetails = async () => {
@@ -62,59 +46,9 @@ const MatchInfo = () => {
     getMatcheDetails();
   }, [dispatch, matchId]);
 
-  useEffect(() => {
-    const getMatcheDetails = async () => {
-      // if (!validateLogin()) return;
-      if (!player1 || !player2) return;
-      try {
-        // console.log(credentials);
-        await dispatch(
-          matchDetailsHeadToHeadAction({
-            player1Id: player1?.id,
-            player2Id: player2?.id,
-          }),
-        ).unwrap();
-
-        // navigate("/matches");
-      } catch (error) {
-        // await dispatch(
-        //   toastAction({ message: error.message, type: "ERROR" })
-        // ).unwrap();
-        console.log(error);
-      }
-    };
-
-    getMatcheDetails();
-  }, [dispatch, player1, player2]);
-
   const options = {
-    Marcador: (
-      <WrapperScore>
-        <PlayersWrapper>
-          <PlayerStyled winner={winnerId === player1?.id}>
-            {player1?.name}
-          </PlayerStyled>
-          <PlayerStyled winner={winnerId === player2?.id}>
-            {player2?.name}
-          </PlayerStyled>
-        </PlayersWrapper>
-        <ResultScore>
-          {sets?.map((set, i) => {
-            return (
-              <div key={i}>
-                <ResultStyled winner={set.player1Score > set.player2Score}>
-                  {set.player1Score}
-                </ResultStyled>
-                <ResultStyled winner={set.player1Score < set.player2Score}>
-                  {set.player2Score}
-                </ResultStyled>
-              </div>
-            );
-          })}
-        </ResultScore>
-      </WrapperScore>
-    ),
-    H2H: <div>H2H</div>,
+    Marcador: <Score matchDetails={matchDetails} />,
+    H2H: <HeadToHead player1={player1} player2={player2} />,
   };
   return (
     <div>

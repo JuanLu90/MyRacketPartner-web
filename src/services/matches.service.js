@@ -26,7 +26,7 @@ async function matchDetails(matchId) {
 
 async function matchDetailsHeadToHead(data) {
   const requestOptions = getRequestOptions("GET");
-  console.log(data);
+
   return await fetch(
     `${API_URL}/matchDetails/headtohead/${data.player1Id}/${data.player2Id}`,
     requestOptions,
