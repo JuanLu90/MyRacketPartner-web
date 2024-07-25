@@ -1,6 +1,6 @@
 # MyRacketPartner
 
-## Main technologies:
+## Stack:
 
   - React (create-react-app) 
   - Styled-components
