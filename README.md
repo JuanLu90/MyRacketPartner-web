@@ -5,6 +5,10 @@
 
 # MyRacketPartner
 
+- Web: https://github.com/JuanLu90/MyRacketPartner-web
+- Mobile: https://github.com/JuanLu90/MyRacketPartner-mobile
+- Commons: https://github.com/JuanLu90/MyRacketPartner-commons
+- Api: https://github.com/JuanLu90/MyRacketPartner-api
 
 ## Stack:
 
