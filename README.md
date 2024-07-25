@@ -1,4 +1,10 @@
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/5040ec17-707e-402e-8de8-2acd1076dae0" alt="logo-icon" width="200" height="200" />
+</div>
+</div>
+
 # MyRacketPartner
+
 
 ## Stack:
 
