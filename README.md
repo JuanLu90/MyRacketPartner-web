@@ -3,7 +3,7 @@
 </div>
 </div>
 
-# MyRacketPartner
+# MyRacketPartner - Web
 
 - Web: https://github.com/JuanLu90/MyRacketPartner-web
 - Mobile: https://github.com/JuanLu90/MyRacketPartner-mobile
@@ -14,7 +14,7 @@
 
   - React (create-react-app) 
   - Styled-components
-  - Redux-toolkit: 
+  - Redux-toolkit
   - Redux-thunk
   - Eslint
   - Prettier
