@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import MatchesService from "../../services/matches.service";
+import { matchesService } from "myracketpartner-commons";
 
 const initialState = {
   matches: [],
@@ -11,7 +11,7 @@ export const matches = createAsyncThunk(
   "matches/matches",
   async (id, thunkAPI) => {
     try {
-      const data = await MatchesService.matches();
+      const data = await matchesService.matches();
       const dataByMatchs = data.reduce((acc, curr) => {
         if (!acc[curr.matchID]) {
           acc[curr.matchID] = [];
@@ -31,7 +31,7 @@ export const matchDetailsAction = createAsyncThunk(
   "matches/matchDetails",
   async (matchId, thunkAPI) => {
     try {
-      const data = await MatchesService.matchDetails(matchId);
+      const data = await matchesService.matchDetails(matchId);
 
       return { matchDetails: data };
     } catch (error) {
@@ -45,7 +45,7 @@ export const matchDetailsHeadToHeadAction = createAsyncThunk(
   "matches/matchDetailsHeadToHead",
   async (players, thunkAPI) => {
     try {
-      const data = await MatchesService.matchDetailsHeadToHead(players);
+      const data = await matchesService.matchDetailsHeadToHead(players);
       return { matchDetailsHeadToHead: data };
     } catch (error) {
       console.log(error);
