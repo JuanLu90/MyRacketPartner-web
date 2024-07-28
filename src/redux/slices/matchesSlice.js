@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { matchesService } from "myracketpartner-commons";
+import matchesService from "../../services/matches.service";
 
 const initialState = {
   matches: [],
@@ -12,6 +12,7 @@ export const matches = createAsyncThunk(
   async (id, thunkAPI) => {
     try {
       const data = await matchesService.matches();
+      console.log(data);
       const dataByMatchs = data.reduce((acc, curr) => {
         if (!acc[curr.matchID]) {
           acc[curr.matchID] = [];
