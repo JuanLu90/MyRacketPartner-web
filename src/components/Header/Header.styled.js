@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { colors } from "../../utils/stylesUtil";
+import { colors } from "myracketpartner-commons";
 import { ReactComponent as LogoIconImg } from "../../images/logo-icon.svg";
 import { ReactComponent as MenuImg } from "../../images/menu-icon.svg";
 

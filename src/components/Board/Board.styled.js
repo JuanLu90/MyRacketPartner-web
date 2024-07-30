@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { ReactComponent as FriendlyImg } from "../../images/friendly.svg";
-import { colors } from "../../utils/stylesUtil";
-
+import { colors } from "myracketpartner-commons";
 export const WrapperTitle = styled.div`
   display: grid;
   grid-template-columns: 57px auto;

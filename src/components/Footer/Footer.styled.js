@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { colors } from "../../utils/stylesUtil";
+import { colors } from "myracketpartner-commons";
 import { ReactComponent as LogoImg } from "../../images/logo.svg";
 
 export const Wrapper = styled.footer`

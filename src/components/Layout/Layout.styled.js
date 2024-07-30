@@ -1,6 +1,5 @@
 import styled, { createGlobalStyle } from "styled-components";
-import { colors } from "../../utils/stylesUtil";
-
+import { colors } from "myracketpartner-commons";
 export const Wrapper = styled.div`
   color: ${colors.white};
   min-height: 100vh;

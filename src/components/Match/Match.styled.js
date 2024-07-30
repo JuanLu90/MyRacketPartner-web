@@ -1,6 +1,5 @@
 import styled from "styled-components";
-import { colors } from "../../utils/stylesUtil";
-
+import { colors } from "myracketpartner-commons";
 export const Wrapper = styled.div`
   /*  display: flex;
   align-items: center;
