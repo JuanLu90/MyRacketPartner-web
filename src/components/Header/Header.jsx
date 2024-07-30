@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
-// import { useNavigate, Link } from "react-router-dom";
-// import { useSelector, useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
 // import { logout } from "../../redux/slices/authSlice";
 import {
   Wrapper,
@@ -22,12 +22,12 @@ import UserDefaultImg from "../../images/user-default.png";
 
 const Header = () => {
   // const dispatch = useDispatch();
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
   // const { i18n } = useTranslation();
 
-  // const {
-  //   user: { id, profileImage },
-  // } = useSelector((state) => state.auth);
+  const {
+    user: { id, profileImage },
+  } = useSelector((state) => state.auth);
 
   const toggleMenu = () => {
     setIsOpen((prevIsOpen) => !prevIsOpen);
@@ -77,20 +77,15 @@ const Header = () => {
   return (
     <Wrapper ref={wrapperRef} onClick={() => setIsOpen(false)}>
       <WrapperLogo>
-        {/* <LogoIconIcon onClick={() => navigate("/")} /> */}
-        <LogoIconIcon onClick={() => console.log("LogoIconIcon")} />
+        <LogoIconIcon onClick={() => navigate("/")} />
       </WrapperLogo>
       <RightContent>
-        {/* {id && (
+        {id && (
           <UserDefaultIcon
             src={profileImage ?? UserDefaultImg}
             onClick={() => navigate("/profile")}
           />
-        )} */}
-        <UserDefaultIcon
-          src={UserDefaultImg}
-          onClick={() => console.log("UserDefaultIcon")}
-        />
+        )}
         <WrapperMenu isOpen={isOpen} onClick={toggleMenu}>
           <WrapperMenuIcon>
             <MenuIcon isOpen={isOpen} onClick={handleMenuIconClick} />
