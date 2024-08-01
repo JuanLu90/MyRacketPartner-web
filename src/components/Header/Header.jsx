@@ -148,7 +148,7 @@ const Header = () => {
               </>
             )} */}
             <li>
-              <button onClick={() => console.log("login")}>Log in</button>
+              <button onClick={() => navigate("/login")}>Log in</button>
             </li>
             <li>
               <Separator />

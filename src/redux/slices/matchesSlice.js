@@ -12,7 +12,7 @@ export const matches = createAsyncThunk(
   async (id, thunkAPI) => {
     try {
       const data = await matchesService.matches();
-      console.log(data);
+
       const dataByMatchs = data.reduce((acc, curr) => {
         if (!acc[curr.matchID]) {
           acc[curr.matchID] = [];
