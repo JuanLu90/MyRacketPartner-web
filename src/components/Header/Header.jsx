@@ -154,7 +154,7 @@ const Header = () => {
               <Separator />
             </li>
             <li>
-              <button onClick={() => console.log("signup")}>Sign up</button>
+              <button onClick={() => navigate("/register")}>Sign up</button>
             </li>
           </ul>
         </div>

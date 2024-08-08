@@ -14,7 +14,7 @@ const MatchInfo = lazy(() => import("../components/MatchInfo/MatchInfo"));
 // );
 // const Tournaments = lazy(() => import("../components/Tournaments/Tournaments"));
 // const Profile = lazy(() => import("../components/Profile/Profile"));
-// const Register = lazy(() => import("../components/Register/Register"));
+const Register = lazy(() => import("../components/Register/Register"));
 const Login = lazy(() => import("../components/Login/Login"));
 // const ForgotPassword = lazy(() =>
 //   import("../components/ForgotPassword/ForgotPassword.jsx")
@@ -87,12 +87,12 @@ export const routesTypes = {
     component: Login,
     type: "noPrivate",
   },
-  // "/register": {
-  //   baseRoute: "/register",
-  //   title: "Register",
-  //   component: Register,
-  //   type: "noPrivate",
-  // },
+  "/register": {
+    baseRoute: "/register",
+    title: "Register",
+    component: Register,
+    type: "noPrivate",
+  },
   // "/forgotpassword": {
   //   baseRoute: "/forgotpassword",
   //   title: "Forgot Password",
