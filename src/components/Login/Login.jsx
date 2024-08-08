@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 // import { toastAction } from "../../redux/slices/alertSlice";
 import LoginForm from "./LoginForm/LoginForm";
-// import { validateEmail, validatePassword } from "../../utils/validationUtil";
+import { validateEmail, validatePassword } from "../../utils/validationUtil";
 
 const Login = () => {
   const initialCredentials = {
@@ -30,14 +30,14 @@ const Login = () => {
     const { email, password } = credentials;
     const errors = {};
 
-    // if (!email) errors.email = "Email is required.";
-    // else if (!validateEmail(email))
-    //   errors.email = "Enter a valid email address.";
+    if (!email) errors.email = "Email is required.";
+    else if (!validateEmail(email))
+      errors.email = "Enter a valid email address.";
 
-    // if (!password) errors.password = "Password is required";
-    // else if (!validatePassword(password))
-    //   errors.password =
-    //     "Password must contain at least one lowercase letter, one uppercase letter, one digit, and between 6 and 12 characters.";
+    if (!password) errors.password = "Password is required";
+    else if (!validatePassword(password))
+      errors.password =
+        "Password must contain at least one lowercase letter, one uppercase letter, one digit, and between 6 and 12 characters.";
 
     setErrorState(errors);
     return Object.keys(errors).length === 0;
