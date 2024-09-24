@@ -104,7 +104,6 @@ const Match = (props) => {
             </View>
           </View>
           <View style={styles.wrapperResult}>
-            -asd
             {sets.map((set, i) => (
               <View key={i} style={styles.resultInner}>
                 <Text
