@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { colors } from "utils/stylesUtil";
+import { styles } from "@myracketpartner/common";
 
 export const Wrapper = styled.div`
   width: 100%;
@@ -14,11 +14,11 @@ export const WrapperInput = styled.div`
     height: 40px;
     margin: 7px 0 5px 0;
     padding: 0 10px;
-    color: ${colors.white};
-    border: 1px solid ${colors.greyDark};
+    color: ${styles.colors.white};
+    border: 1px solid ${styles.colors.greyDark};
 
     background-color: ${(props) =>
-      props.disabled ? `${colors.greyDark}` : "transparent"};
+      props.disabled ? `${styles.colors.greyDark}` : "transparent"};
     ${(props) => props.disabled && "opacity: 0.3; cursor: not-allowed"};
 
     &:focus {
@@ -30,7 +30,7 @@ export const WrapperInput = styled.div`
     &:-webkit-autofill:focus,
     &:-webkit-autofill:active {
       -webkit-box-shadow: 0 0 0 30px #343a40 inset !important;
-      -webkit-text-fill-color: ${colors.white} !important;
+      -webkit-text-fill-color: ${styles.colors.white} !important;
     }
   }
 
@@ -38,11 +38,11 @@ export const WrapperInput = styled.div`
     position: absolute;
     top: 18px;
     right: 12px;
-    color: ${colors.greyDark};
+    color: ${styles.colors.greyDark};
   }
 
   .error {
-    border-color: ${colors.orange};
+    border-color: ${styles.colors.orange};
   }
 
   img {
@@ -56,11 +56,12 @@ export const WrapperInput = styled.div`
 
 export const Label = styled.label`
   font-size: 14px;
-  color: ${(props) => (props.error ? colors.orange : colors.white)};
+  color: ${(props) =>
+    props.error ? styles.colors.orange : styles.colors.white};
 `;
 
 export const Title = styled.span`
   font-size: 0.85rem;
   font-weight: 400;
-  color: ${colors.greyLight};
+  color: ${styles.colors.greyLight};
 `;

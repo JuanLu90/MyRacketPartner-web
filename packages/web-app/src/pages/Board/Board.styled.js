@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import FriendlyImg from "images/friendly.svg?react";
-import { colors } from "utils/stylesUtil";
+import { styles } from "@myracketpartner/common";
 
 export const WrapperTitle = styled.div`
   display: grid;
@@ -19,6 +19,6 @@ export const FriendlyIcon = styled(FriendlyImg)`
   margin: auto;
 
   path {
-    fill: ${colors.greyLight};
+    fill: ${styles.colors.greyLight};
   }
 `;

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { colors } from "utils/stylesUtil";
+import { styles } from "@myracketpartner/common";
 export const Wrapper = styled.div`
   /*  display: flex;
   align-items: center;
@@ -24,7 +24,7 @@ export const DateStyle = styled.div`
   align-items: center;
   font-size: 0.75rem;
   /* margin: 0 10px; */
-  color: ${colors.greyLight};
+  color: ${styles.colors.greyLight};
 `;
 
 export const Result = styled.div`
@@ -68,7 +68,7 @@ export const ResultStyled = styled.span`
 
 export const Separator = styled.div`
   flex: 0 0 1px;
-  background-color: ${colors.greyLight};
+  background-color: ${styles.colors.greyLight};
   height: 36px;
   opacity: 0.6;
 `;

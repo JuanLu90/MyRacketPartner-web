@@ -1,9 +1,9 @@
 import styled, { createGlobalStyle } from "styled-components";
-import { colors } from "utils/stylesUtil";
+import { styles } from "@myracketpartner/common";
 export const Wrapper = styled.div`
-  color: ${colors.white};
+  color: ${styles.colors.white};
   min-height: 100vh;
-  background-color: ${colors.primary};
+  background-color: ${styles.colors.primary};
 `;
 
 export const WrapperBody = styled.div`
@@ -17,7 +17,7 @@ export const Main = styled.main`
   flex-direction: column;
   justify-content: space-between;
   min-height: calc(100vh - 60px);
-  border: 2px solid ${colors.green};
+  border: 2px solid ${styles.colors.green};
   border-top: none;
   border-bottom: none;
 `;
@@ -30,5 +30,5 @@ export const GlobalStyle = createGlobalStyle`
 
 export const BottomBlock = styled.div`
   height: 60px;
-  border-top: 1px solid ${colors.green};
+  border-top: 1px solid ${styles.colors.green};
 `;

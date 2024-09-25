@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { colors } from "utils/stylesUtil";
+import { styles } from "@myracketpartner/common";
 
 export const Wrapper = styled.div`
   display: flex;
@@ -14,18 +14,20 @@ export const Title = styled.h1`
 
 export const Subtitle = styled.span`
   margin-bottom: 15px;
-  color: ${colors.greyLight};
+  color: ${styles.colors.greyLight};
 `;
 
 export const WrapperInputArea = styled.div`
   margin-bottom: 20px;
   font-size: 14px;
-  color: ${(props) => (props.error ? colors.orange : colors.white)};
+  color: ${(props) =>
+    props.error ? styles.colors.orange : styles.colors.white};
 `;
 
 export const Label = styled.span`
   font-size: 14px;
-  color: ${(props) => (props.error ? colors.orange : colors.white)};
+  color: ${(props) =>
+    props.error ? styles.colors.orange : styles.colors.white};
 `;
 
 export const TextAreaInput = styled.textarea`
@@ -34,9 +36,9 @@ export const TextAreaInput = styled.textarea`
   margin-top: 15px;
   padding: 10px 10px 90px 10px;
   background-color: transparent;
-  color: ${colors.white};
+  color: ${styles.colors.white};
   border: 1px solid
-    ${(props) => (props.error ? colors.orange : colors.greyDark)};
+    ${(props) => (props.error ? styles.colors.orange : styles.colors.greyDark)};
   resize: vertical;
 
   &:focus {
@@ -47,8 +49,8 @@ export const TextAreaInput = styled.textarea`
   &:-webkit-autofill:hover,
   &:-webkit-autofill:focus,
   &:-webkit-autofill:active {
-    -webkit-box-shadow: 0 0 0 30px ${colors.greyDark} inset !important;
-    -webkit-text-fill-color: ${colors.white} !important;
+    -webkit-box-shadow: 0 0 0 30px ${styles.colors.greyDark} inset !important;
+    -webkit-text-fill-color: ${styles.colors.white} !important;
   }
 `;
 
@@ -74,7 +76,7 @@ export const StyledCheckbox = styled.div`
   width: 16px;
   height: 16px;
   background-color: ${(props) =>
-    props.checked ? `${colors.orange}` : `${colors.greyDark}`};
+    props.checked ? `${styles.colors.orange}` : `${styles.colors.greyDark}`};
 
   &::after {
     content: "";
@@ -93,9 +95,9 @@ export const StyledCheckbox = styled.div`
 export const CreateSuggestionsButton = styled.button`
   margin: auto 0 30px 0;
   padding: 12px;
-  background: ${colors.orange};
+  background: ${styles.colors.orange};
   border: 0;
-  color: ${colors.primary};
+  color: ${styles.colors.primary};
   font-size: 18px;
   font-weight: bold;
   border-radius: 5px;

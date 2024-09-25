@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { colors } from "utils/stylesUtil";
+import { styles } from "@myracketpartner/common";
 
 export const Wrapper = styled.div`
   position: relative;
@@ -12,8 +12,8 @@ export const FirstBlock = styled.div`
   flex-direction: column;
   padding: 40px 30px;
   background: linear-gradient(
-    ${colors.greyDarkSemiTransparent},
-    ${colors.primary}
+    ${styles.colors.greyDarkSemiTransparent},
+    ${styles.colors.primary}
   );
 `;
 
@@ -43,14 +43,14 @@ export const WrapperInfo = styled.div`
   }
   > div {
     padding: 10px 20px;
-    background-color: ${colors.greyDarkSemiTransparent};
+    background-color: ${styles.colors.greyDarkSemiTransparent};
 
     > div {
       display: flex;
       justify-content: space-between;
 
       > span:first-child {
-        color: ${colors.greyLight};
+        color: ${styles.colors.greyLight};
       }
 
       > span {
@@ -68,18 +68,18 @@ export const EditIcon = styled.img`
 export const Button = styled.button`
   margin-bottom: 30px;
   padding: 10px 20px;
-  background-color: ${colors.orange};
+  background-color: ${styles.colors.orange};
   font-size: 1.1rem;
   font-weight: bold;
-  color: ${colors.primary};
+  color: ${styles.colors.primary};
   border: none;
   border-radius: 5px;
   cursor: pointer;
 
   &:disabled {
-    background-color: ${colors.greyDark};
+    background-color: ${styles.colors.greyDark};
     opacity: 0.5;
-    color: ${colors.white};
+    color: ${styles.colors.white};
     cursor: not-allowed;
   }
 `;

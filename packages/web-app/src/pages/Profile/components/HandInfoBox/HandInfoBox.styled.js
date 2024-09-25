@@ -1,12 +1,12 @@
 import styled from "styled-components";
 import HandImg from "images/hand.svg?react";
-import { colors } from "utils/stylesUtil";
+import { styles } from "@myracketpartner/common";
 
 export const Wrapper = styled.div`
   display: flex;
   margin: 20px;
   padding: 7px 20px;
-  border: 1px solid ${colors.greyDark};
+  border: 1px solid ${styles.colors.greyDark};
 
   > span {
     display: flex;

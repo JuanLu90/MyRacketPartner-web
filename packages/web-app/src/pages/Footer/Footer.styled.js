@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { colors } from "utils/stylesUtil";
+import { styles } from "@myracketpartner/common";
 import LogoImg from "images/logo.svg?react";
 
 export const Wrapper = styled.footer`
@@ -8,7 +8,7 @@ export const Wrapper = styled.footer`
   align-items: center;
   margin: 0 auto;
   padding: 20px;
-  background-color: ${colors.orange};
+  background-color: ${styles.colors.orange};
   color: black;
   font-weight: bold;
   text-align: center;
@@ -59,6 +59,6 @@ export const DonatePaypalImage = styled.img`
 
 export const Separator = styled.hr`
   width: 100%;
-  border-top: 2px solid ${colors.primary};
+  border-top: 2px solid ${styles.colors.primary};
   border-bottom: none;
 `;

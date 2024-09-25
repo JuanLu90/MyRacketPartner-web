@@ -1,13 +1,13 @@
 import styled from "styled-components";
 import PlusImg from "images/plus.svg?react";
 
-import { colors } from "utils/stylesUtil";
+import { styles } from "@myracketpartner/common";
 
 export const Button = styled.button`
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background-color: ${colors.green};
+  background-color: ${styles.colors.green};
   color: white;
   border: none;
   border-radius: 50%;
@@ -21,7 +21,7 @@ export const Button = styled.button`
   transition: background-color 0.3s ease;
 
   &:hover {
-    background-color: ${colors.greenSemiTransparent};
+    background-color: ${styles.colors.greenSemiTransparent};
   }
 `;
 
@@ -30,6 +30,6 @@ export const PlusIcon = styled(PlusImg)`
   cursor: pointer;
 
   path {
-    fill: ${colors.primary};
+    fill: ${styles.colors.primary};
   }
 `;

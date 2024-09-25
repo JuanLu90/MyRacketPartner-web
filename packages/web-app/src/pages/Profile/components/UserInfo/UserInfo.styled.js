@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { colors } from "utils/stylesUtil";
+import { styles } from "@myracketpartner/common";
 
 export const Wrapper = styled.div`
   margin-bottom: 55px;
@@ -9,7 +9,7 @@ export const Wrapper = styled.div`
     justify-content: space-between;
     margin: 20px;
     padding: 12px;
-    background-color: ${colors.greyLightSemiTransparent};
+    background-color: ${styles.colors.greyLightSemiTransparent};
   }
 `;
 

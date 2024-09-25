@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { colors } from "utils/stylesUtil";
+import { styles } from "@myracketpartner/common";
 import MenuImg from "images/menu-icon.svg?react";
 
 export const WrapperRightContent = styled.div`
@@ -11,7 +11,7 @@ export const WrapperMenu = styled.div`
   display: flex;
   align-items: center;
   padding: 10px;
-  ${(props) => props.isOpen && `background-color: ${colors.green};`}
+  ${(props) => props.isOpen && `background-color: ${styles.colors.green};`}
 `;
 
 export const WrapperMenuIcon = styled.div`
@@ -23,7 +23,8 @@ export const MenuIcon = styled(MenuImg)`
   cursor: pointer;
 
   path {
-    fill: ${(props) => (props.isOpen ? colors.primary : colors.green)};
+    fill: ${(props) =>
+      props.isOpen ? styles.colors.primary : styles.colors.green};
   }
 
   &:focus {

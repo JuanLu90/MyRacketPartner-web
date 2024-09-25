@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { colors } from "utils/stylesUtil";
+import { styles } from "@myracketpartner/common";
 import PlusImg from "images/plus.svg?react";
 import MinusImg from "images/minus.svg?react";
 import WarningImg from "images/warning.svg?react";
@@ -18,7 +18,7 @@ export const DateStyle = styled.div`
   margin-bottom: 20px;
   font-size: 0.75rem;
   /* margin: 0 10px; */
-  color: ${colors.greyLight};
+  color: ${styles.colors.greyLight};
 
   > span {
     width: 100%;
@@ -69,15 +69,16 @@ export const UserStyled = styled.div`
 
 export const InputResult = styled.input`
   width: 30px;
-  color: ${colors.white};
+  color: ${styles.colors.white};
   background: transparent;
   font-size: 2rem;
   border: none;
   border-bottom: 1px solid
-    ${(props) => (props.error ? colors.orange : colors.greyLight)};
+    ${(props) => (props.error ? styles.colors.orange : styles.colors.greyLight)};
   text-align: center;
   font-weight: ${(props) => props.winner && "bold"};
-  color: ${(props) => (props.error ? colors.orange : colors.white)};
+  color: ${(props) =>
+    props.error ? styles.colors.orange : styles.colors.white};
 
   &:focus {
     outline: none;
@@ -88,7 +89,7 @@ export const InputResult = styled.input`
   &:-webkit-autofill:focus,
   &:-webkit-autofill:active {
     -webkit-box-shadow: 0 0 0 30px #343a40 inset !important;
-    -webkit-text-fill-color: ${colors.white} !important;
+    -webkit-text-fill-color: ${styles.colors.white} !important;
   }
 `;
 
@@ -97,7 +98,8 @@ export const PlusIcon = styled(PlusImg)`
   cursor: pointer;
 
   path {
-    fill: ${(props) => (props.error ? colors.orange : colors.white)};
+    fill: ${(props) =>
+      props.error ? styles.colors.orange : styles.colors.white};
   }
 `;
 
@@ -107,12 +109,12 @@ export const MinusIcon = styled(MinusImg)`
   bottom: 20px;
   width: 12px;
   padding: 5px;
-  background-color: ${colors.blue};
+  background-color: ${styles.colors.blue};
   border-radius: 100%;
   cursor: pointer;
 
   path {
-    fill: ${colors.white};
+    fill: ${styles.colors.white};
   }
 `;
 
@@ -125,13 +127,14 @@ export const NotSelectedUser = styled.button`
   height: 60px;
   padding: 16px;
   background-color: transparent;
-  border: 2px dashed ${(props) => (props.error ? colors.orange : colors.white)};
+  border: 2px dashed
+    ${(props) => (props.error ? styles.colors.orange : styles.colors.white)};
   border-radius: 100%;
 `;
 
 export const Separator = styled.div`
   flex: 0 0 1px;
-  background-color: ${colors.green};
+  background-color: ${styles.colors.green};
   height: 36px;
   opacity: 0.6;
 `;
@@ -154,7 +157,7 @@ export const UserDefaultIcon = styled.img`
 export const SelectedUserIcon = styled.img`
   width: ${(props) => (props.width ? `${props.width}px` : "100%")};
   border-radius: 100%;
-  border: 4px solid ${colors.blue};
+  border: 4px solid ${styles.colors.blue};
   box-sizing: border-box;
 `;
 
@@ -165,11 +168,11 @@ export const SearchUser = styled.div`
 export const InputSearchUser = styled.input`
   width: 100%;
   padding-bottom: 5px;
-  color: ${colors.white};
+  color: ${styles.colors.white};
   background: transparent;
   font-size: 1rem;
   border: none;
-  border-bottom: 1px solid ${colors.greyLight};
+  border-bottom: 1px solid ${styles.colors.greyLight};
 
   &:focus {
     outline: none;
@@ -180,12 +183,12 @@ export const InputSearchUser = styled.input`
   &:-webkit-autofill:focus,
   &:-webkit-autofill:active {
     -webkit-box-shadow: 0 0 0 30px #343a40 inset !important;
-    -webkit-text-fill-color: ${colors.white} !important;
+    -webkit-text-fill-color: ${styles.colors.white} !important;
   }
 `;
 
 export const SearchUserResults = styled.div`
-  background-color: ${colors.primary};
+  background-color: ${styles.colors.primary};
   margin-top: 10px;
   padding: 8px 0;
   max-height: 140px;
@@ -221,7 +224,7 @@ export const WrapperErrorMessage = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    color: ${colors.orange};
+    color: ${styles.colors.orange};
     font-weight: 500;
   }
 `;
@@ -231,6 +234,6 @@ export const WarningIcon = styled(WarningImg)`
   margin-right: 10px;
 
   path {
-    fill: ${colors.orange};
+    fill: ${styles.colors.orange};
   }
 `;

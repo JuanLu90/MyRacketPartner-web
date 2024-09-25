@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { colors } from "utils/stylesUtil";
+import { styles } from "@myracketpartner/common";
 
 export const Wrapper = styled.div`
   display: flex;
@@ -7,8 +7,8 @@ export const Wrapper = styled.div`
   flex-direction: column;
   padding: 40px 30px;
   background: linear-gradient(
-    ${colors.greyDarkSemiTransparent},
-    ${colors.primary}
+    ${styles.colors.greyDarkSemiTransparent},
+    ${styles.colors.primary}
   );
 `;
 

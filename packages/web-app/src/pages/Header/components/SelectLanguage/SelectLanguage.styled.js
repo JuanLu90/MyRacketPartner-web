@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { colors } from "utils/stylesUtil";
+import { styles } from "@myracketpartner/common";
 
 export const WrapperSelectLanguage = styled.div`
   display: flex;
@@ -21,7 +21,7 @@ export const WrapperSelectLanguage = styled.div`
 export const LanguageOption = styled.span`
   margin: 0 7px;
   padding: 3px 7px;
-  color: ${colors.primary};
+  color: ${styles.colors.primary};
   border-radius: 5px;
   ${(props) => (props) => props.languageSelected && "border: 2px solid black;"}
 `;

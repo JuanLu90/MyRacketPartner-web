@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { colors } from "utils/stylesUtil";
+import { styles } from "@myracketpartner/common";
 
 export const WrapperScore = styled.div`
   display: flex;
@@ -48,7 +48,7 @@ export const Date = styled.div`
   margin-right: 15px;
   font-size: 0.75rem;
   font-weight: bold;
-  color: ${colors.greyLight};
+  color: ${styles.colors.greyLight};
 `;
 
 export const ResultStyled = styled.div`
@@ -57,7 +57,7 @@ export const ResultStyled = styled.div`
 
 export const TournamentNameStyled = styled.div`
   padding: 10px 20px;
-  background-color: ${colors.greyLightSemiTransparent};
+  background-color: ${styles.colors.greyLightSemiTransparent};
   font-size: 0.9rem;
   font-weight: bold;
 `;

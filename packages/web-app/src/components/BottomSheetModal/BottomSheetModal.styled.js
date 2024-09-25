@@ -1,5 +1,5 @@
 import styled, { keyframes, createGlobalStyle } from "styled-components";
-import { colors } from "utils/stylesUtil";
+import { styles } from "@myracketpartner/common";
 
 const slideUp = keyframes`
   0% {
@@ -39,8 +39,8 @@ export const ModalBackground = styled.div`
   justify-content: end;
   width: -webkit-fill-available;
   min-height: 250px;
-  background: ${colors.primary};
-  color: ${colors.white};
+  background: ${styles.colors.primary};
+  color: ${styles.colors.white};
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
   padding: 30px;
@@ -102,13 +102,13 @@ export const Button = styled.button`
 export const CancelButton = styled(Button)`
   margin-right: 10px;
   background-color: transparent;
-  color: ${colors.greyLight};
-  border: 1px solid ${colors.greyLight};
+  color: ${styles.colors.greyLight};
+  border: 1px solid ${styles.colors.greyLight};
 `;
 
 export const SendButton = styled(Button)`
-  background-color: ${colors.green};
-  color: ${colors.primary};
+  background-color: ${styles.colors.green};
+  color: ${styles.colors.primary};
   border: none;
 `;
 export const WrapperCloseIcon = styled.div`
@@ -119,8 +119,8 @@ export const WrapperCloseIcon = styled.div`
   align-items: center;
   width: 20px;
   padding: 15px;
-  background-color: ${colors.primary};
-  border: 1px solid ${colors.orange};
+  background-color: ${styles.colors.primary};
+  border: 1px solid ${styles.colors.orange};
   border-radius: 5px;
   cursor: pointer;
 `;

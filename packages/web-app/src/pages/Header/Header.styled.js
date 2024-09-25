@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { colors } from "utils/stylesUtil";
+import { styles } from "@myracketpartner/common";
 import LogoImg from "images/logo-icon.svg?react";
 
 export const Wrapper = styled.header`
@@ -8,7 +8,7 @@ export const Wrapper = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: ${colors.primary};
+  background-color: ${styles.colors.primary};
   z-index: 3;
 `;
 
@@ -17,7 +17,7 @@ export const LogoIcon = styled(LogoImg)`
   cursor: pointer;
 
   path {
-    fill: ${colors.green};
+    fill: ${styles.colors.green};
   }
 `;
 
@@ -27,7 +27,7 @@ export const DropdownWrapper = styled.div`
   right: 0;
   width: 200px;
   max-height: ${(props) => (props.open ? "400px" : "0")};
-  background-color: ${colors.green};
+  background-color: ${styles.colors.green};
   overflow: auto;
   overflow-y: auto;
   scrollbar-width: none;
@@ -51,7 +51,7 @@ export const DropdownWrapper = styled.div`
           text-decoration: none;
           background-color: transparent;
           border: none;
-          color: ${colors.primary};
+          color: ${styles.colors.primary};
         }
       }
     }

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { colors } from "utils/stylesUtil";
+import { styles } from "@myracketpartner/common";
 
 export const Wrapper = styled.div`
   width: 100%;
@@ -12,12 +12,13 @@ export const Wrapper = styled.div`
       width: -webkit-fill-available;
       margin: 7px 0 5px 0;
       padding: 10px;
-      color: ${colors.white};
+      color: ${styles.colors.white};
       border: 1px solid
-        ${(props) => (props.error ? colors.orange : colors.greyDark)};
+        ${(props) =>
+          props.error ? styles.colors.orange : styles.colors.greyDark};
 
       background-color: ${(props) =>
-        props.disabled ? `${colors.greyDark}` : "transparent"};
+        props.disabled ? `${styles.colors.greyDark}` : "transparent"};
       ${(props) => props.disabled && "opacity: 0.3; cursor: not-allowed"};
 
       &:focus {
@@ -28,8 +29,8 @@ export const Wrapper = styled.div`
       &:-webkit-autofill:hover,
       &:-webkit-autofill:focus,
       &:-webkit-autofill:active {
-        -webkit-box-shadow: 0 0 0 30px ${colors.greyDark} inset !important;
-        -webkit-text-fill-color: ${colors.white} !important;
+        -webkit-box-shadow: 0 0 0 30px ${styles.colors.greyDark} inset !important;
+        -webkit-text-fill-color: ${styles.colors.white} !important;
       }
     }
   }
@@ -39,10 +40,11 @@ export const Title = styled.span`
   margin-bottom: 13px;
   font-size: 0.85rem;
   font-weight: 400;
-  color: ${colors.greyLight};
+  color: ${styles.colors.greyLight};
 `;
 
 export const Label = styled.label`
   font-size: 14px;
-  color: ${(props) => (props.error ? colors.orange : colors.white)};
+  color: ${(props) =>
+    props.error ? styles.colors.orange : styles.colors.white};
 `;

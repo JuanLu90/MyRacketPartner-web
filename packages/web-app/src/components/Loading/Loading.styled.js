@@ -1,5 +1,5 @@
 import styled, { keyframes } from "styled-components";
-import { colors } from "utils/stylesUtil";
+import { styles } from "@myracketpartner/common";
 
 const rotate = keyframes`
   0% { transform: rotate(0deg); }
@@ -20,8 +20,8 @@ export const FullScreenCentered = styled.div`
 `;
 
 export const LoadingIcon = styled.div`
-  border: 14px solid ${colors.orange};
-  border-top: 14px solid ${colors.green};
+  border: 14px solid ${styles.colors.orange};
+  border-top: 14px solid ${styles.colors.green};
   border-radius: 50%;
   width: 80px;
   height: 80px;

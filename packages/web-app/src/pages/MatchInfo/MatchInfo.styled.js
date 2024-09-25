@@ -1,12 +1,12 @@
 import styled from "styled-components";
-import { colors } from "utils/stylesUtil";
+import { styles } from "@myracketpartner/common";
 
 export const WrapperHeader = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 35px;
-  background-color: ${colors.greyDarkSemiTransparent};
+  background-color: ${styles.colors.greyDarkSemiTransparent};
 `;
 
 export const WrapperPlayer = styled.div`
@@ -46,7 +46,7 @@ export const Option = styled.div`
 
   ${(props) =>
     props.selected &&
-    `background-color: ${colors.green}; color: ${colors.primary}; font-weight: bold`};
+    `background-color: ${styles.colors.green}; color: ${styles.colors.primary}; font-weight: bold`};
 `;
 
 export const UserDefaultIcon = styled.img`
