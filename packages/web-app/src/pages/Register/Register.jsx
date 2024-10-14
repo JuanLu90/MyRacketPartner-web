@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 
 // COMPONENTS
 import RegisterForm from "pages/Register/components/RegisterForm/RegisterForm";
-import GoogleAuthButton from "components/GoogleAuthButton/GoogleAuthButton";
+// import GoogleAuthButton from "components/GoogleAuthButton/GoogleAuthButton";
 
 // import { toastAction } from "../../redux/slices/alertSlice";
 
@@ -15,7 +15,7 @@ import {
   Title,
   Wrapper,
   Separator,
-  WrapperLoginRRSS,
+  // WrapperLoginRRSS,
 } from "./Register.styled";
 
 // FUNCTION
@@ -29,9 +29,9 @@ const Register = () => {
 
       <Separator> {t("Register.Separator1")} </Separator>
 
-      <WrapperLoginRRSS>
+      {/* <WrapperLoginRRSS>
         <GoogleAuthButton />
-      </WrapperLoginRRSS>
+      </WrapperLoginRRSS> */}
 
       <Separator> {t("Register.Separator2")} </Separator>
       <RegisterForm />

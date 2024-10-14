@@ -1,10 +1,13 @@
 // DEPENDENCIES
-import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useState } from "react";
+import { useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
 
 // REDUX
 import { matchesAction } from "store/slices/matchesSlice";
+
+// HOOKS
+import { useFetchDataHook } from "@myracketpartner/common";
 
 // COMPONENTS
 import Match from "components/Match/Match";
@@ -16,22 +19,11 @@ import { WrapperTitle, FriendlyIcon } from "./Board.styled";
 
 // FUNCTION
 const Board = () => {
-  const dispatch = useDispatch();
   const { t } = useTranslation();
 
   const [addMatchModalState, setAddMatchModalState] = useState(false);
 
-  useEffect(() => {
-    const getMatches = async () => {
-      try {
-        await dispatch(matchesAction()).unwrap();
-      } catch (error) {
-        console.log(error);
-      }
-    };
-
-    getMatches();
-  }, [dispatch]);
+  useFetchDataHook(matchesAction);
 
   const {
     user: { id },

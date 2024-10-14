@@ -1,11 +1,14 @@
 // DEPENDENCIES
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 // REDUX
 import { userProfileAction } from "store/slices/usersSlice";
+
+// HOOKS
+import { useFetchDataHook } from "@myracketpartner/common";
 
 // COMPONENTS
 import EditProfile from "./components/EditProfile/EditProfile";
@@ -26,7 +29,6 @@ import {
 
 // FUNCTION
 const Profile = () => {
-  const dispatch = useDispatch();
   const location = useLocation();
   const { t } = useTranslation();
 
@@ -44,17 +46,7 @@ const Profile = () => {
 
   const [editProfileActive, setEditProfileActive] = useState(false);
 
-  useEffect(() => {
-    const getUserInfo = async () => {
-      try {
-        await dispatch(userProfileAction(userIdPath)).unwrap();
-      } catch (error) {
-        console.log(error);
-      }
-    };
-
-    getUserInfo();
-  }, [dispatch, userIdPath]);
+  useFetchDataHook(userProfileAction, userIdPath);
 
   const isAdmin = userId === userIdPath;
 

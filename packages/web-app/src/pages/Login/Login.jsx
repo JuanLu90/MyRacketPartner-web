@@ -6,7 +6,7 @@ import { useTranslation } from "react-i18next";
 
 // COMPONENTS
 import LoginForm from "./components/LoginForm/LoginForm";
-import GoogleAuthButton from "components/GoogleAuthButton/GoogleAuthButton";
+// import GoogleAuthButton from "components/GoogleAuthButton/GoogleAuthButton";
 
 // STYLES
 import {
@@ -15,7 +15,7 @@ import {
   Title,
   Wrapper,
   Separator,
-  WrapperLoginRRSS,
+  // WrapperLoginRRSS,
 } from "./Login.styled";
 
 // FUNCTION
@@ -27,9 +27,9 @@ const Login = () => {
       <Title>{t("Login.Title")}</Title>
       <Subtitle>{t("Login.Subtitle")}</Subtitle>
       <Separator> {t("Login.Separator1")} </Separator>
-      <WrapperLoginRRSS>
+      {/* <WrapperLoginRRSS>
         <GoogleAuthButton />
-      </WrapperLoginRRSS>
+      </WrapperLoginRRSS> */}
       <Separator> {t("Login.Separator2")} </Separator>
       <LoginForm />
       <Logged>
