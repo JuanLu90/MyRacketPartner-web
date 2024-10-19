@@ -11,10 +11,10 @@ import { userProfileAction } from "store/slices/usersSlice";
 import { useFetchDataHook } from "@myracketpartner/common";
 
 // COMPONENTS
-import EditProfile from "./components/EditProfile/EditProfile";
-import UserInfo from "./components/UserInfo/UserInfo";
-import FirstBlock from "./components/FirstBlock/FirstBlock";
-import HandInfoBox from "./components/HandInfoBox/HandInfoBox";
+import EditProfile from "./components/editProfile/EditProfile";
+import UserInfo from "./components/userInfo/UserInfo";
+import FirstBlock from "./components/firstBlock/FirstBlock";
+import HandInfoBox from "./components/handInfoBox/HandInfoBox";
 
 // STYLES
 import {

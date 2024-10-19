@@ -1,8 +1,8 @@
 import { lazy } from "react";
 
 // const Home = lazy(() => import("../pages/Board/Board"));
-const Board = lazy(() => import("pages/Board/Board"));
-const MatchInfo = lazy(() => import("pages/MatchInfo/MatchInfo"));
+const Board = lazy(() => import("pages/board/Board"));
+const MatchInfo = lazy(() => import("pages/matchInfo/MatchInfo"));
 // const TournamentDetails = lazy(() =>
 //   import("../pages/TournamentDetails/TournamentDetails")
 // );
@@ -13,16 +13,16 @@ const MatchInfo = lazy(() => import("pages/MatchInfo/MatchInfo"));
 //   import("../pages/NewTournament/NewTournament")
 // );
 // const Tournaments = lazy(() => import("../pages/Tournaments/Tournaments"));
-const Profile = lazy(() => import("pages/Profile/Profile"));
-const Register = lazy(() => import("pages/Register/Register"));
-const Login = lazy(() => import("pages/Login/Login"));
+const Profile = lazy(() => import("pages/profile/Profile"));
+const Register = lazy(() => import("pages/register/Register"));
+const Login = lazy(() => import("pages/login/Login"));
 // const ForgotPassword = lazy(() =>
 //   import("../pages/ForgotPassword/ForgotPassword.jsx")
 // );
 // const ResetPassword = lazy(() =>
 //   import("../pages/ResetPassword/ResetPassword.jsx")
 // );
-const Suggestions = lazy(() => import("pages/Suggestions/Suggestions.jsx"));
+const Suggestions = lazy(() => import("pages/suggestions/Suggestions.jsx"));
 
 export const routesTypes = {
   "/": {

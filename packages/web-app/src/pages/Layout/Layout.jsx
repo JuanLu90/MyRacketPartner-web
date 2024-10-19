@@ -2,8 +2,8 @@
 import { useSelector } from "react-redux";
 
 // COMPONENTS
-import Header from "../Header/Header";
-import Footer from "../Footer/Footer";
+import Header from "../header/Header";
+import Footer from "../footer/Footer";
 import Loading from "components/Loading/Loading";
 // import ToastAlert from "../Generic/ToastAlert/ToastAlert";
 

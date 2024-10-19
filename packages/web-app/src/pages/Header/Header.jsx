@@ -4,9 +4,9 @@ import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 // COMPONENTS
-import MenuItems from "./components/MenuItems/MenuItems";
-import SelectLanguage from "./components/SelectLanguage/SelectLanguage";
-import RightContent from "./components/RightContent/RightContent";
+import MenuItems from "./components/menuItems/MenuItems";
+import SelectLanguage from "./components/selectLanguage/SelectLanguage";
+import RightContent from "./components/rightContent/RightContent";
 
 // STYLES
 import {

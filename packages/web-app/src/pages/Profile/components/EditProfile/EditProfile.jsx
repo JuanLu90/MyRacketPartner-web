@@ -29,9 +29,11 @@ import {
   dominantHandOptions,
   genderOptions,
 } from "utils/typesUtil";
-import { normalizeDate } from "utils/dateUtil";
 import { countries } from "utils/countriesUtil";
 import { validateEditProfile } from "utils/validationUtil";
+
+// COMMONS
+import { states } from "@myracketpartner/common";
 
 // import ChangePasswordModal from "./Modals/ChangePasswordModal.jsx";
 // import EditPlayerInformationModal from "./Modals/EditPlayerInformationModal.jsx";
@@ -48,17 +50,7 @@ const EditProfile = ({ isAdmin, closeEditProfile }) => {
   const userInfo = useSelector((state) => state.users.userInfo);
 
   const initialState = useMemo(
-    () => ({
-      firstName: userInfo.firstName,
-      lastName: userInfo.lastName,
-      birthdate: normalizeDate(userInfo.birthdate),
-      gender: userInfo.gender,
-      dominantHand: userInfo.dominantHand,
-      backhand: userInfo.backhand,
-      height: userInfo.height,
-      weight: userInfo.weight,
-      country: userInfo.country,
-    }),
+    () => states.initialStateEditProfile(userInfo),
     [userInfo]
   );
 

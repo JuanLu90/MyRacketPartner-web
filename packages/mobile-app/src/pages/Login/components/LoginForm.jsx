@@ -17,19 +17,17 @@ import styles from "./LoginForm.styled";
 import { colors } from "utils/stylesUtil";
 import { validateLogin } from "utils/validationUtil";
 
+// COMMONS
+import { states } from "@myracketpartner/common";
+
 // FUNCTION
 const LoginForm = () => {
   const navigation = useNavigation();
   const dispatch = useDispatch();
   const { t } = useTranslation();
 
-  const initialCredentials = {
-    email: "",
-    password: "",
-  };
-
   const { formState, errors, handleChange, handleValidation } =
-    useFormValidation(initialCredentials, validateLogin);
+    useFormValidation(states.initialStateLoginForm, validateLogin);
 
   const onSubmit = async () => {
     const isValid = handleValidation();

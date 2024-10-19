@@ -14,21 +14,17 @@ import { SendInfoButton } from "./RegisterForm.styled";
 import { loginAction, registerAction } from "store/slices/authSlice";
 import { validateRegister } from "utils/validationUtil";
 
+// COMMONS
+import { states } from "@myracketpartner/common";
+
 // FUNCTION
 const RegisterForm = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { t } = useTranslation();
 
-  const initialRegisterInfo = {
-    userName: "",
-    email: "",
-    password: "",
-    confirmPassword: "",
-  };
-
   const { formState, errors, handleChange, handleValidation } =
-    useFormValidation(initialRegisterInfo, validateRegister);
+    useFormValidation(states.initialStateRegisterForm, validateRegister);
 
   const onSubmit = async () => {
     const isValid = handleValidation();

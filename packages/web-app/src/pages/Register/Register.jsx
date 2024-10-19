@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 // COMPONENTS
-import RegisterForm from "pages/Register/components/RegisterForm/RegisterForm";
+import RegisterForm from "pages/register/components/registerForm/RegisterForm";
 // import GoogleAuthButton from "components/GoogleAuthButton/GoogleAuthButton";
 
 // import { toastAction } from "../../redux/slices/alertSlice";
@@ -27,13 +27,13 @@ const Register = () => {
       <Title>{t("Register.Title")}</Title>
       <Subtitle>{t("Register.Subtitle")}</Subtitle>
 
-      <Separator> {t("Register.Separator1")} </Separator>
+      {/*  <Separator> {t("Register.Separator1")} </Separator>
 
-      {/* <WrapperLoginRRSS>
+      <WrapperLoginRRSS>
         <GoogleAuthButton />
-      </WrapperLoginRRSS> */}
+      </WrapperLoginRRSS>
 
-      <Separator> {t("Register.Separator2")} </Separator>
+      <Separator> {t("Register.Separator2")} </Separator> */}
       <RegisterForm />
 
       <Registered>

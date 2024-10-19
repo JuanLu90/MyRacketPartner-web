@@ -3,12 +3,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { jwtDecode } from "jwt-decode";
 // import { toastAction } from "./alertSlice";
 import AuthService from "services/auth.service";
-
-const initialState = {
-  isLoggedIn: false,
-  token: null,
-  user: { id: "", name: "", username: "", email: "" },
-};
+import { states } from "@myracketpartner/common";
 
 export const loginAction = createAsyncThunk(
   "auth/login",
@@ -138,7 +133,7 @@ export const tokenExpired = createAsyncThunk(
 
 const authSlice = createSlice({
   name: "auth",
-  initialState,
+  initialState: states.initialStateAuthSlice,
   reducers: {},
   extraReducers: (builder) => {
     builder
@@ -169,7 +164,7 @@ const authSlice = createSlice({
           state.user = jwtDecode(action.payload.token);
         } catch (e) {
           console.error(e);
-          return initialState;
+          return states.initialStateAuthSlice;
         }
       });
   },

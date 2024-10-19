@@ -24,7 +24,6 @@ import useFormValidation from "hooks/useFormValidation";
 import styles from "./EditProfile.styled";
 
 // UTILS
-import { normalizeDate } from "utils/dateUtil";
 import {
   backhandOptions,
   dominantHandOptions,
@@ -34,6 +33,9 @@ import {
 import { countries } from "utils/countriesUtil";
 import { validateEditProfile } from "utils/validationUtil";
 
+// COMMONS
+import { states } from "@myracketpartner/common";
+
 // FUNCTION
 const EditProfile = ({ isAdmin, closeEditProfile, userId }) => {
   const dispatch = useDispatch();
@@ -42,17 +44,7 @@ const EditProfile = ({ isAdmin, closeEditProfile, userId }) => {
   const userInfo = useSelector((state) => state.users.userInfo);
 
   const initialState = useMemo(
-    () => ({
-      firstName: userInfo.firstName,
-      lastName: userInfo.lastName,
-      birthdate: normalizeDate(userInfo.birthdate),
-      gender: userInfo.gender,
-      dominantHand: userInfo.dominantHand,
-      backhand: userInfo.backhand,
-      height: userInfo.height,
-      weight: userInfo.weight,
-      country: userInfo.country,
-    }),
+    () => states.initialStateEditProfile(userInfo),
     [userInfo],
   );
 
@@ -159,7 +151,7 @@ const EditProfile = ({ isAdmin, closeEditProfile, userId }) => {
             <Text style={styles.errorLabel}>{errors.lastName}</Text>
           )}
         </View>
-        <View style={{ marginBottom: 20 }}>
+        {/* <View style={{ marginBottom: 20 }}>
           <Text style={{ color: colors.greyLight }}>
             {t("EditProfile.Personal.Birthdate")}
           </Text>
@@ -171,7 +163,7 @@ const EditProfile = ({ isAdmin, closeEditProfile, userId }) => {
             display="default"
             style={{ ...styles.inputSelect, width: generalWidth }}
           />
-        </View>
+        </View> */}
         <View style={{ marginBottom: 20 }}>
           <Text style={{ color: colors.greyLight }}>
             {t("EditProfile.Personal.Gender.Title")}
@@ -231,7 +223,7 @@ const EditProfile = ({ isAdmin, closeEditProfile, userId }) => {
             <Text style={styles.errorLabel}>{errors.weight}</Text>
           )}
         </View>
-        <View style={{ marginBottom: 20 }}>
+        {/* <View style={{ marginBottom: 20 }}>
           <Text style={{ color: colors.greyLight }}>
             {t("Profile.Country")}
           </Text>
@@ -246,7 +238,7 @@ const EditProfile = ({ isAdmin, closeEditProfile, userId }) => {
             darkTheme
             doneText="OK"
           />
-        </View>
+        </View> */}
       </View>
       <Text style={styles.sectionTitle}>{t("EditProfile.Player.Title")}</Text>
       <View

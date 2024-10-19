@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 // import { toastAction } from "../../redux/slices/alertSlice";
 
 // COMPONENTS
-import LoginForm from "./components/LoginForm/LoginForm";
+import LoginForm from "./components/loginForm/LoginForm";
 // import GoogleAuthButton from "components/GoogleAuthButton/GoogleAuthButton";
 
 // STYLES
@@ -26,11 +26,11 @@ const Login = () => {
     <Wrapper>
       <Title>{t("Login.Title")}</Title>
       <Subtitle>{t("Login.Subtitle")}</Subtitle>
-      <Separator> {t("Login.Separator1")} </Separator>
-      {/* <WrapperLoginRRSS>
+      {/* <Separator> {t("Login.Separator1")} </Separator>
+     <WrapperLoginRRSS>
         <GoogleAuthButton />
-      </WrapperLoginRRSS> */}
-      <Separator> {t("Login.Separator2")} </Separator>
+      </WrapperLoginRRSS>
+      <Separator> {t("Login.Separator2")} </Separator> */}
       <LoginForm />
       <Logged>
         {t("Login.NoRegisterYet")}{" "}

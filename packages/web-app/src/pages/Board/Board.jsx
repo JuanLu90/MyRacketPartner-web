@@ -10,7 +10,7 @@ import { matchesAction } from "store/slices/matchesSlice";
 import { useFetchDataHook } from "@myracketpartner/common";
 
 // COMPONENTS
-import Match from "components/Match/Match";
+import Match from "components/match/Match";
 import FloatingButton from "components/FloatingButton/FloatingButton";
 import AddMatchModal from "components/Modals/AddMatchModal";
 

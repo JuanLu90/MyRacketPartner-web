@@ -19,19 +19,17 @@ import { SendInfoButton } from "./LoginForm.styled";
 // UTILS
 import { validateLogin } from "utils/validationUtil";
 
+// COMMONS
+import { states } from "@myracketpartner/common";
+
 // FUNCTION
 const LoginForm = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { t } = useTranslation();
 
-  const initialCredentials = {
-    email: "",
-    password: "",
-  };
-
   const { formState, errors, handleChange, handleValidation } =
-    useFormValidation(initialCredentials, validateLogin);
+    useFormValidation(states.initialStateLoginForm, validateLogin);
 
   const onSubmit = async () => {
     const isValid = handleValidation();

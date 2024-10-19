@@ -24,18 +24,16 @@ import {
 import useFormValidation from "hooks/useFormValidation.jsx";
 import { validateSuggestions } from "utils/validationUtil.js";
 
+// COMMONS
+import { states } from "@myracketpartner/common";
+
 // FUNCTION
 const Suggestions = () => {
   const dispatch = useDispatch();
   const { t } = useTranslation();
 
-  const initialSuggestionsState = {
-    suggestions: "",
-    shareSuggestion: 0,
-  };
-
   const { formState, setFormState, errors, handleChange, handleValidation } =
-    useFormValidation(initialSuggestionsState, validateSuggestions);
+    useFormValidation(states.initialStateSuggestions, validateSuggestions);
 
   const onSubmit = async () => {
     const isValid = handleValidation();
@@ -43,7 +41,7 @@ const Suggestions = () => {
 
     try {
       await dispatch(sendSuggestionsAction(formState)).unwrap();
-      setFormState(initialSuggestionsState);
+      setFormState(states.initialStateSuggestions);
       // await dispatch(
       //   toastAction({ message: response, type: "SUCCESS" })
       // ).unwrap();

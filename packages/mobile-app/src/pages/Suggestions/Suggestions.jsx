@@ -18,18 +18,16 @@ import styles from "./Suggestions.styled";
 // UTILS
 import { validateSuggestions } from "utils/validationUtil";
 
+// COMMONS
+import { states } from "@myracketpartner/common";
+
 // FUNCTION
 const Suggestions = () => {
   const dispatch = useDispatch();
   const { t } = useTranslation();
 
-  const initialSuggestionsState = {
-    suggestions: "",
-    shareSuggestion: 0,
-  };
-
   const { formState, setFormState, errors, handleChange, handleValidation } =
-    useFormValidation(initialSuggestionsState, validateSuggestions);
+    useFormValidation(states.initialStateSuggestions, validateSuggestions);
 
   // const handleChange = (event) => {
   //   const { name, value, type, checked } = event.target;
@@ -54,7 +52,7 @@ const Suggestions = () => {
 
     try {
       await dispatch(sendSuggestionsAction(formState)).unwrap();
-      setFormState(initialSuggestionsState);
+      setFormState(states.initialStateSuggestions);
       // await dispatch(
       //   toastAction({ message: response, type: "SUCCESS" })
       // ).unwrap();
@@ -90,7 +88,7 @@ const Suggestions = () => {
         <Text style={styles.errorLabel}>{errors.suggestions}</Text>
       )}
 
-      <View style={[styles.wrapperCheckBox, { maxWidth: generalWidth }]}>
+      {/* <View style={[styles.wrapperCheckBox, { maxWidth: generalWidth }]}>
         <CheckBox
           value={formState.shareSuggestion}
           onValueChange={(newValue) =>
@@ -115,7 +113,7 @@ const Suggestions = () => {
             {t("Suggestions.CheckboxShare")}
           </Text>
         </Pressable>
-      </View>
+      </View> */}
 
       <Pressable
         style={styles.createSuggestionsButton}
