@@ -6,9 +6,6 @@ import { useDispatch } from "react-redux";
 // COMPONENTS
 import CustomInput from "components/CustomInput/CustomInput";
 
-// HOOKS
-import useFormValidation from "hooks/useFormValidation";
-
 // STYLES
 import { SendInfoButton } from "./RegisterForm.styled";
 import { loginAction, registerAction } from "store/slices/authSlice";
@@ -16,6 +13,7 @@ import { validateRegister } from "utils/validationUtil";
 
 // COMMONS
 import { states } from "@myracketpartner/common";
+import { useFormValidation } from "@myracketpartner/common";
 
 // FUNCTION
 const RegisterForm = () => {
@@ -24,7 +22,7 @@ const RegisterForm = () => {
   const { t } = useTranslation();
 
   const { formState, errors, handleChange, handleValidation } =
-    useFormValidation(states.initialStateRegisterForm, validateRegister);
+    useFormValidation(states.initialStateRegisterForm, validateRegister, true);
 
   const onSubmit = async () => {
     const isValid = handleValidation();

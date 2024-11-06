@@ -7,9 +7,6 @@ import { useNavigation } from "expo-router";
 // REDUX
 import { loginAction, registerAction } from "store/slices/authSlice";
 
-// HOOKS
-import useFormValidation from "hooks/useFormValidation";
-
 // STYLES
 import styles from "./RegisterForm.styled";
 
@@ -19,6 +16,7 @@ import { validateRegister } from "utils/validationUtil";
 
 // COMMONS
 import { states } from "@myracketpartner/common";
+import { useFormValidation } from "@myracketpartner/common";
 
 // FUNCTION
 const RegisterForm = () => {

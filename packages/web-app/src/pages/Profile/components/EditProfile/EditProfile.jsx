@@ -12,9 +12,6 @@ import CustomInput from "components/CustomInput/CustomInput";
 import DropDownInput from "components/DropdownInput/DropdownInput";
 import DatePickerInput from "components/DatePicker/DatePicker";
 
-// HOOKS
-import useFormValidation from "hooks/useFormValidation";
-
 // STYLES
 import {
   Wrapper,
@@ -34,6 +31,7 @@ import { validateEditProfile } from "utils/validationUtil";
 
 // COMMONS
 import { states } from "@myracketpartner/common";
+import { useFormValidation } from "@myracketpartner/common";
 
 // import ChangePasswordModal from "./Modals/ChangePasswordModal.jsx";
 // import EditPlayerInformationModal from "./Modals/EditPlayerInformationModal.jsx";
@@ -60,7 +58,7 @@ const EditProfile = ({ isAdmin, closeEditProfile }) => {
     handleChange,
     handleChangeBirthdate,
     handleValidation,
-  } = useFormValidation(initialState, validateEditProfile);
+  } = useFormValidation(initialState, validateEditProfile, true);
 
   const onSubmit = async () => {
     const isValid = handleValidation();

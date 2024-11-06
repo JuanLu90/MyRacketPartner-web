@@ -21,11 +21,11 @@ import {
 } from "./Suggestions.styled.js";
 
 // UTILS
-import useFormValidation from "hooks/useFormValidation.jsx";
 import { validateSuggestions } from "utils/validationUtil.js";
 
 // COMMONS
 import { states } from "@myracketpartner/common";
+import { useFormValidation } from "@myracketpartner/common";
 
 // FUNCTION
 const Suggestions = () => {
@@ -33,7 +33,11 @@ const Suggestions = () => {
   const { t } = useTranslation();
 
   const { formState, setFormState, errors, handleChange, handleValidation } =
-    useFormValidation(states.initialStateSuggestions, validateSuggestions);
+    useFormValidation(
+      states.initialStateSuggestions,
+      validateSuggestions,
+      true
+    );
 
   const onSubmit = async () => {
     const isValid = handleValidation();

@@ -17,9 +17,6 @@ import DateTimePicker from "@react-native-community/datetimepicker";
 // REDUX
 import { editUserInfoAction, userProfileAction } from "store/slices/usersSlice";
 
-// HOOKS
-import useFormValidation from "hooks/useFormValidation";
-
 // STYLES
 import styles from "./EditProfile.styled";
 
@@ -35,6 +32,7 @@ import { validateEditProfile } from "utils/validationUtil";
 
 // COMMONS
 import { states } from "@myracketpartner/common";
+import { useFormValidation } from "@myracketpartner/common";
 
 // FUNCTION
 const EditProfile = ({ isAdmin, closeEditProfile, userId }) => {

@@ -9,9 +9,6 @@ import { useDispatch } from "react-redux";
 // REDUX
 import { sendSuggestionsAction } from "store/slices/usersSlice";
 
-// HOOKS
-import useFormValidation from "hooks/useFormValidation";
-
 // STYLES
 import styles from "./Suggestions.styled";
 
@@ -20,6 +17,7 @@ import { validateSuggestions } from "utils/validationUtil";
 
 // COMMONS
 import { states } from "@myracketpartner/common";
+import { useFormValidation } from "@myracketpartner/common";
 
 // FUNCTION
 const Suggestions = () => {

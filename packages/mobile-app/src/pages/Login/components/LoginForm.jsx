@@ -7,9 +7,6 @@ import { useTranslation } from "react-i18next";
 // REDUX
 import { loginAction } from "store/slices/authSlice";
 
-// HOOKS
-import useFormValidation from "hooks/useFormValidation";
-
 // STYLES
 import styles from "./LoginForm.styled";
 
@@ -19,6 +16,7 @@ import { validateLogin } from "utils/validationUtil";
 
 // COMMONS
 import { states } from "@myracketpartner/common";
+import { useFormValidation } from "@myracketpartner/common";
 
 // FUNCTION
 const LoginForm = () => {
