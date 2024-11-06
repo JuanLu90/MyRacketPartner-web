@@ -1,10 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import matchesService from "services/matches.service";
 import { setLoading } from "./loadingSlice";
-
-const initialState = {
-  matches: [],
-};
+import { states } from "@myracketpartner/common";
 
 export const matchesAction = createAsyncThunk(
   "matches/matches",
@@ -107,7 +104,7 @@ export const editMatchAction = createAsyncThunk(
 
 const matchesSlice = createSlice({
   name: "matches",
-  initialState,
+  initialState: states.initialStateMatchSlice,
   extraReducers: (builder) => {
     builder
       .addCase(matchesAction.fulfilled, (state, action) => {

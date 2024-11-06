@@ -1,10 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import UsersService from "../../services/users.service";
 import { setLoading } from "./loadingSlice";
-
-const initialState = {
-  userInfo: {},
-};
+import { states } from "@myracketpartner/common";
 
 export const userProfileAction = createAsyncThunk(
   "users/user",
@@ -63,7 +60,7 @@ export const sendSuggestionsAction = createAsyncThunk(
 
 const usersSlice = createSlice({
   name: "users",
-  initialState,
+  initialState: states.initialStateUsersSlice,
   extraReducers: (builder) => {
     builder
       .addCase(userProfileAction.fulfilled, (state, action) => {

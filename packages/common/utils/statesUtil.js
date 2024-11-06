@@ -23,6 +23,16 @@ const initialStateAuthSlice = {
   user: { id: "", name: "", userName: "", email: "" },
 };
 
+const initialStateMatchSlice = {
+  matches: [],
+  matchDetails: {},
+  matchDetailsHeadToHead: [],
+};
+
+const initialStateUsersSlice = {
+  userInfo: {},
+};
+
 const initialStateEditProfile = (userInfo) => {
   return {
     firstName: userInfo.firstName,
@@ -42,6 +52,8 @@ const states = {
   initialStateRegisterForm,
   initialStateSuggestions,
   initialStateAuthSlice,
+  initialStateMatchSlice,
+  initialStateUsersSlice,
   initialStateEditProfile,
 };
 
