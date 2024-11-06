@@ -10,13 +10,13 @@ import { loginAction } from "store/slices/authSlice";
 // STYLES
 import styles from "./LoginForm.styled";
 
-// UTILS
-import { colors } from "utils/stylesUtil";
-import { validateLogin } from "utils/validationUtil";
-
 // COMMONS
-import { states } from "@myracketpartner/common";
-import { useFormValidation } from "@myracketpartner/common";
+import {
+  styles as stylesCommons,
+  states,
+  validates,
+  useFormValidation,
+} from "@myracketpartner/common";
 
 // FUNCTION
 const LoginForm = () => {
@@ -25,7 +25,7 @@ const LoginForm = () => {
   const { t } = useTranslation();
 
   const { formState, errors, handleChange, handleValidation } =
-    useFormValidation(states.initialStateLoginForm, validateLogin);
+    useFormValidation(states.initialStateLoginForm, validates.validateLogin);
 
   const onSubmit = async () => {
     const isValid = handleValidation();
@@ -52,13 +52,15 @@ const LoginForm = () => {
             styles.input,
             {
               width: generalWidth,
-              borderColor: errors.email ? colors.orange : colors.greyDark,
+              borderColor: errors.email
+                ? stylesCommons.colors.orange
+                : stylesCommons.colors.greyDark,
             },
           ]}
           onChangeText={(value) => handleChange(value, "email")}
           value={formState.email}
           placeholder={t("Login.Email")}
-          placeholderTextColor={colors.greyDark}
+          placeholderTextColor={stylesCommons.colors.greyDark}
         />
         {errors.email ? (
           <Text style={styles.errorLabel}>{errors.email}</Text>
@@ -70,13 +72,15 @@ const LoginForm = () => {
             styles.input,
             {
               width: generalWidth,
-              borderColor: errors.password ? colors.orange : colors.greyDark,
+              borderColor: errors.password
+                ? stylesCommons.colors.orange
+                : stylesCommons.colors.greyDark,
             },
           ]}
           onChangeText={(value) => handleChange(value, "password")}
           value={formState.password}
           placeholder={t("Login.Password")}
-          placeholderTextColor={colors.greyDark}
+          placeholderTextColor={stylesCommons.colors.greyDark}
           secureTextEntry={true}
         />
         {errors.password ? (

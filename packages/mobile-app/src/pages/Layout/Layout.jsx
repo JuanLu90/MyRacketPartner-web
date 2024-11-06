@@ -10,7 +10,6 @@ import {
   Text,
 } from "react-native";
 import { useDispatch, useSelector } from "react-redux";
-import { colors } from "utils/stylesUtil";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useTranslation } from "react-i18next";
 
@@ -28,6 +27,9 @@ import styles from "./Layout.styled";
 
 // UTILS
 import { getTokenLocalStorage } from "utils/apiUtils";
+
+// COMMONS
+import { styles as stylesCommons } from "@myracketpartner/common";
 
 // FUNCTION
 const Layout = () => {
@@ -112,11 +114,15 @@ const Layout = () => {
       <Stack
         screenOptions={{
           headerTitle: "",
-          headerStyle: { backgroundColor: colors.primary },
+          headerStyle: { backgroundColor: stylesCommons.colors.primary },
           headerLeft: () => (
             <Link href="/" asChild>
               <Pressable style={styles.menuItem}>
-                <LogoIcon width={35} height={35} pathFill={colors.green} />
+                <LogoIcon
+                  width={35}
+                  height={35}
+                  pathFill={stylesCommons.colors.green}
+                />
               </Pressable>
             </Link>
           ),
@@ -145,7 +151,11 @@ const Layout = () => {
 
               <View>
                 <Pressable onPress={toggleMenu}>
-                  <MenuIcon width={40} height={40} pathFill={colors.green} />
+                  <MenuIcon
+                    width={40}
+                    height={40}
+                    pathFill={stylesCommons.colors.green}
+                  />
                 </Pressable>
               </View>
             </View>

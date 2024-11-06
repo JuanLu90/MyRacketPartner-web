@@ -9,12 +9,8 @@ import {
   BackhandIcon,
 } from "./HandInfoBox.styled";
 
-// UTILS
-import {
-  dominantHandOptions,
-  backhandOptions,
-  getLabelForOptions,
-} from "utils/typesUtil";
+// COMMONS
+import { types } from "@myracketpartner/common";
 
 // FUNCTION
 const HandInfoBox = ({ hand }) => {
@@ -34,10 +30,10 @@ const HandInfoBox = ({ hand }) => {
   const backhandTitle = t("EditProfile.Player.Backhand.Title");
 
   const dominantHandLabel = t(
-    getLabelForOptions(userInfo?.dominantHand, dominantHandOptions)
+    types.getLabelForOptions(userInfo?.dominantHand, types.dominantHandOptions)
   );
   const backhandLabel = t(
-    getLabelForOptions(userInfo?.backhand, backhandOptions)
+    types.getLabelForOptions(userInfo?.backhand, types.backhandOptions)
   );
 
   return (

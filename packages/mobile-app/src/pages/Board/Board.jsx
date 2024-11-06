@@ -2,7 +2,6 @@
 import { useEffect, useState } from "react";
 import { View, Text, ScrollView } from "react-native";
 import { useSelector, useDispatch } from "react-redux";
-import { colors } from "utils/stylesUtil";
 import { useTranslation } from "react-i18next";
 
 // REDUX
@@ -18,6 +17,9 @@ import styles from "./Board.styled";
 
 // IMAGES
 import FriendlyIcon from "images/svg-components/FriendlyIcon";
+
+// COMMONS
+import { styles as stylesCommons } from "@myracketpartner/common";
 
 // FUNCTION
 const Board = () => {
@@ -51,7 +53,7 @@ const Board = () => {
             width={40}
             height={30}
             marginHorizontal={23}
-            pathFill={colors.greyLight}
+            pathFill={stylesCommons.colors.greyLight}
           />
           <Text style={styles.title}>{t("Board.Friendly.Title")}</Text>
         </View>

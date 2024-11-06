@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-import { colors } from "utils/stylesUtil";
+import { styles as stylesCommons } from "@myracketpartner/common";
 
 const styles = StyleSheet.create({
   wrapperTitle: {
@@ -7,7 +7,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   title: {
-    color: colors.white,
+    color: stylesCommons.colors.white,
     fontSize: 17,
     fontWeight: "bold",
   },

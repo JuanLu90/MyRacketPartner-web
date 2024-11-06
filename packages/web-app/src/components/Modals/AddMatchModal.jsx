@@ -46,10 +46,10 @@ import {
 // IMAGES
 import UserDefaultImg from "images/user-default.png";
 
-// UTILS
-import { validateAddResult } from "utils/validationUtil";
-// import { formatDate, formatHour } from "utils/dateUtil";
+// COMMONS
+import { validates } from "@myracketpartner/common";
 
+// FUNCTION
 const AddMatchModal = (props) => {
   const dispatch = useDispatch();
   const { t } = useTranslation();
@@ -93,7 +93,7 @@ const AddMatchModal = (props) => {
   };
 
   const onSubmit = async () => {
-    const validationErrors = validateAddResult(matchInfoState, t);
+    const validationErrors = validates.validateAddResult(matchInfoState, t);
     setErrors(validationErrors);
 
     if (Object.keys(validationErrors).length !== 0) return;

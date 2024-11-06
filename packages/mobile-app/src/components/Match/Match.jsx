@@ -1,10 +1,6 @@
 // DEPENDENCIES
 import { View, Text, Image, Pressable, StyleSheet } from "react-native";
-import { colors } from "utils/stylesUtil";
 import { useRouter } from "expo-router";
-
-// UTILS
-import { formatDate, formatHour } from "utils/dateUtil";
 
 // IMAGES
 import EditMatchImg from "images/edit.png";
@@ -12,6 +8,9 @@ import UserDefaultImg from "images/user-default.png";
 
 // STYLES
 import styles from "./Match.styled";
+
+// COMMONS
+import { dates } from "@myracketpartner/common";
 
 // FUNCTION
 const Match = (props) => {
@@ -55,8 +54,8 @@ const Match = (props) => {
         <View style={styles.innerWrapper}>
           <View style={styles.firstBlock}>
             <View style={styles.date}>
-              <Text style={styles.dateText}>{formatDate(matchDate)}</Text>
-              <Text style={styles.dateText}>{formatHour(matchDate)}</Text>
+              <Text style={styles.dateText}>{dates.formatDate(matchDate)}</Text>
+              <Text style={styles.dateText}>{dates.formatHour(matchDate)}</Text>
             </View>
             <View style={styles.separator} />
             <View style={styles.usersWrapper}>

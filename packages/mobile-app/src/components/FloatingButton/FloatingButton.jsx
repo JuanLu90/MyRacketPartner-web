@@ -7,14 +7,14 @@ import styles from "./FloatingButton.styled";
 // IMAGES
 import PlusIcon from "images/svg-components/PlusIcon";
 
-// UTILS
-import { colors } from "utils/stylesUtil";
+// COMMONS
+import { styles as stylesCommons } from "@myracketpartner/common";
 
 // FUNCTION
 const FloatingButton = ({ action }) => {
   return (
     <Pressable onPress={action} style={styles.button}>
-      <PlusIcon pathFill={colors.primary} />
+      <PlusIcon pathFill={stylesCommons.colors.primary} />
     </Pressable>
   );
 };

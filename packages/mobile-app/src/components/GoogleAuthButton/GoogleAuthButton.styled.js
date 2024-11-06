@@ -1,9 +1,9 @@
 import { StyleSheet } from "react-native";
-import { colors } from "utils/stylesUtil";
+import { styles as stylesCommons } from "@myracketpartner/common";
 
 const styles = StyleSheet.create({
   button: {
-    backgroundColor: colors.white,
+    backgroundColor: stylesCommons.colors.white,
     borderRadius: 4,
     height: 40,
     paddingHorizontal: 12,

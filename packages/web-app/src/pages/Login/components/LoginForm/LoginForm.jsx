@@ -13,12 +13,8 @@ import CustomInput from "components/CustomInput/CustomInput";
 // STYLES
 import { SendInfoButton } from "./LoginForm.styled";
 
-// UTILS
-import { validateLogin } from "utils/validationUtil";
-
 // COMMONS
-import { states } from "@myracketpartner/common";
-import { useFormValidation } from "@myracketpartner/common";
+import { states, validates, useFormValidation } from "@myracketpartner/common";
 
 // FUNCTION
 const LoginForm = () => {
@@ -27,7 +23,11 @@ const LoginForm = () => {
   const { t } = useTranslation();
 
   const { formState, errors, handleChange, handleValidation } =
-    useFormValidation(states.initialStateLoginForm, validateLogin, true);
+    useFormValidation(
+      states.initialStateLoginForm,
+      validates.validateLogin,
+      true
+    );
 
   const onSubmit = async () => {
     const isValid = handleValidation();

@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-import { colors } from "utils/stylesUtil";
+import { styles as stylesCommons } from "@myracketpartner/common";
 
 const styles = StyleSheet.create({
   userDefaultIcon: {
@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
     marginBottom: 8,
     borderRadius: 40,
     borderWidth: 4,
-    borderColor: colors.blue,
+    borderColor: stylesCommons.colors.blue,
   },
   wrapperInfoResult: {
     flex: 1,
@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   userName: {
-    color: colors.white,
+    color: stylesCommons.colors.white,
   },
   notSelectedUser: {
     width: 65,
@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
     padding: 16,
     backgroundColor: "transparent",
     borderWidth: 2,
-    borderColor: colors.white,
+    borderColor: stylesCommons.colors.white,
     borderRadius: 40,
     borderStyle: "dashed",
   },
@@ -50,18 +50,18 @@ const styles = StyleSheet.create({
     right: 17,
     bottom: 22,
     padding: 5,
-    backgroundColor: colors.blue,
+    backgroundColor: stylesCommons.colors.blue,
     borderRadius: 40,
   },
   input: {
     paddingBottom: 5,
     width: 40,
-    color: colors.white,
+    color: stylesCommons.colors.white,
     background: "transparent",
     fontSize: 32,
     border: "none",
     borderBottomWidth: 1,
-    borderColor: colors.white,
+    borderColor: stylesCommons.colors.white,
     textAlign: "center",
   },
   wrapperResult: {
@@ -77,9 +77,9 @@ const styles = StyleSheet.create({
   inputSearchUser: {
     width: "100%",
     paddingBottom: 5,
-    color: colors.white,
+    color: stylesCommons.colors.white,
     borderBottomWidth: 1,
-    borderColor: colors.white,
+    borderColor: stylesCommons.colors.white,
     fontSize: 18,
   },
   searchUserImage: {
@@ -98,7 +98,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   textErrorMessage: {
-    color: colors.orange,
+    color: stylesCommons.colors.orange,
     fontWeight: "500",
     fontSize: 18,
   },

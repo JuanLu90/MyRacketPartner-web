@@ -1,7 +1,6 @@
 // DEPENDENCIES
 import { Text, View, ScrollView } from "react-native";
 import { Link, Stack } from "expo-router";
-import { colors } from "utils/stylesUtil";
 import { useTranslation } from "react-i18next";
 
 // COMPONENTS
@@ -11,6 +10,9 @@ import RegisterForm from "./components/RegisterForm";
 // STYLES
 import styles from "./Register.styled";
 
+// COMMONS
+import { styles as stylesCommons } from "@myracketpartner/common";
+
 // FUNCTION
 const Register = () => {
   const { t } = useTranslation();
@@ -19,8 +21,8 @@ const Register = () => {
     <ScrollView>
       <Stack.Screen
         options={{
-          headerStyle: { backgroundColor: colors.green },
-          headerTintColor: colors.primary,
+          headerStyle: { backgroundColor: stylesCommons.colors.green },
+          headerTintColor: stylesCommons.colors.primary,
           headerLeft: () => {},
           headerRight: () => {},
           headerTitle: "Sign up",
@@ -44,7 +46,9 @@ const Register = () => {
         <Text style={[styles.textColor, { fontSize: 18 }]}>
           {t("Register.haveAccount")}{" "}
           <Link href="/login" style={styles.forgotPassword}>
-            <Text style={{ color: colors.green }}>{t("Register.Signin")}</Text>
+            <Text style={{ color: stylesCommons.colors.green }}>
+              {t("Register.Signin")}
+            </Text>
           </Link>
         </Text>
       </View>

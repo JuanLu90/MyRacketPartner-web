@@ -28,8 +28,9 @@ import MinusIcon from "images/svg-components/MinusIcon";
 import WarningIcon from "images/svg-components/WarningIcon";
 
 // UTILS
-import { colors } from "utils/stylesUtil";
-import { validateAddResult } from "utils/validationUtil";
+
+// COMMONS
+import { styles as stylesCommons, validates } from "@myracketpartner/common";
 
 // FUNCTION
 const AddMatchModal = (props) => {
@@ -75,7 +76,7 @@ const AddMatchModal = (props) => {
   };
 
   const onSubmit = async () => {
-    const validationErrors = validateAddResult(matchInfoState, t);
+    const validationErrors = validates.validateAddResult(matchInfoState, t);
     setErrors(validationErrors);
 
     if (Object.keys(validationErrors).length !== 0) return;
@@ -148,13 +149,13 @@ const AddMatchModal = (props) => {
           errors[0]?.code === 6 ||
           errors[0]?.code === 7) && {
           borderBottomWidth: 2,
-          borderColor: colors.orange,
-          color: colors.orange,
+          borderColor: stylesCommons.colors.orange,
+          color: stylesCommons.colors.orange,
         },
       ]}
       onChangeText={(value) => handleChangeResult(value, value1, value2)}
       placeholder="0"
-      placeholderTextColor={colors.greyLightSemiTransparent}
+      placeholderTextColor={stylesCommons.colors.greyLightSemiTransparent}
       value={matchInfoState.sets[value1]?.[`user${value2}Score`]?.toString()}
     />
   );
@@ -212,7 +213,7 @@ const AddMatchModal = (props) => {
                     onPress={() => handleSelectUser({})}
                     style={styles.unselectUser}
                   >
-                    <MinusIcon pathFill={colors.white} />
+                    <MinusIcon pathFill={stylesCommons.colors.white} />
                   </Pressable>
                 </>
               ) : (
@@ -220,12 +221,16 @@ const AddMatchModal = (props) => {
                   onPress={() => setSelectUserisActive(!selectUserisActive)}
                   style={[
                     styles.notSelectedUser,
-                    errors[0]?.code === 4 && { borderColor: colors.orange },
+                    errors[0]?.code === 4 && {
+                      borderColor: stylesCommons.colors.orange,
+                    },
                   ]}
                 >
                   <PlusIcon
                     pathFill={
-                      errors[0]?.code === 4 ? colors.orange : colors.white
+                      errors[0]?.code === 4
+                        ? stylesCommons.colors.orange
+                        : stylesCommons.colors.white
                     }
                   />
                 </Pressable>
@@ -263,7 +268,7 @@ const AddMatchModal = (props) => {
                 style={styles.inputSearchUser}
                 onChangeText={handleChange}
                 placeholder={t("AddResultModal.SearchBy")}
-                placeholderTextColor={colors.greyLight}
+                placeholderTextColor={stylesCommons.colors.greyLight}
               />
               <View style={{ marginTop: 18 }}>
                 {users.length > 0 &&
@@ -286,18 +291,28 @@ const AddMatchModal = (props) => {
                       />
                       <View>
                         <Text
-                          style={{ color: colors.white, fontWeight: "500" }}
+                          style={{
+                            color: stylesCommons.colors.white,
+                            fontWeight: "500",
+                          }}
                         >
                           {user.firstName ?? user.userName} {user.lastName}
                         </Text>
-                        <Text style={{ color: colors.white, fontSize: 12 }}>
+                        <Text
+                          style={{
+                            color: stylesCommons.colors.white,
+                            fontSize: 12,
+                          }}
+                        >
                           {user.email}
                         </Text>
                       </View>
                     </Pressable>
                   ))}
                 {(!users.length || !query) && (
-                  <Text style={{ color: colors.white, fontSize: 18 }}>
+                  <Text
+                    style={{ color: stylesCommons.colors.white, fontSize: 18 }}
+                  >
                     {t("AddResultModal.NoUsers")}
                   </Text>
                 )}
@@ -313,7 +328,7 @@ const AddMatchModal = (props) => {
               width={25}
               height={25}
               marginRight={10}
-              pathFill={colors.orange}
+              pathFill={stylesCommons.colors.orange}
             />
             <Text style={styles.textErrorMessage}>{errors[0]?.message}</Text>
           </View>

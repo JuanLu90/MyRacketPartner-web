@@ -16,8 +16,8 @@ import {
   Date,
 } from "./HeadToHead.styled";
 
-// UTILS
-import { formatDate } from "utils/dateUtil";
+// COMMONS
+import { dates } from "@myracketpartner/common";
 
 // FUNCTION
 const HeadToHead = (props) => {
@@ -68,7 +68,7 @@ const HeadToHead = (props) => {
             return (
               <WrapperScore key={id}>
                 <Date>
-                  <span>{formatDate(date)}</span>
+                  <span>{dates.formatDate(date)}</span>
                 </Date>
                 <UsersWrapper>
                   <UserStyled winner={winnerID === user1.id}>

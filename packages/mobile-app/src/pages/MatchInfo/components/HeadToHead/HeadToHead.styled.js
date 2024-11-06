@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-import { colors } from "utils/stylesUtil";
+import { styles as stylesCommons } from "@myracketpartner/common";
 
 const styles = StyleSheet.create({
   wrapperScore: {
@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
     whiteSpace: "nowrap",
     overflow: "hidden",
     textOverflow: "ellipsis",
-    color: colors.white,
+    color: stylesCommons.colors.white,
     fontSize: 15,
   },
   winner: {
@@ -35,20 +35,20 @@ const styles = StyleSheet.create({
   },
   resultStyled: {
     margin: 3,
-    color: colors.white,
+    color: stylesCommons.colors.white,
     fontSize: 15,
   },
   date: {
     marginRight: 15,
     fontSize: 13,
     fontWeight: "bold",
-    color: colors.greyLight,
+    color: stylesCommons.colors.greyLight,
   },
   tournamentName: {
     paddingVertical: 10,
     paddingHorizontal: 20,
-    color: colors.white,
-    backgroundColor: colors.greyLightSemiTransparent,
+    color: stylesCommons.colors.white,
+    backgroundColor: stylesCommons.colors.greyLightSemiTransparent,
     fontSize: 15,
     fontWeight: "bold",
   },

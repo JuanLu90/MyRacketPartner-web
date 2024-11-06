@@ -1,13 +1,12 @@
 // formats
-export const ROUND_ROBIN = "ROUND_ROBIN";
-export const SINGLE_TOURNAMENT = "SINGLE_TOURNAMENT";
-export const PLAYOFFS = "PLAYOFFS";
+const ROUND_ROBIN = "ROUND_ROBIN";
+const SINGLE_TOURNAMENT = "SINGLE_TOURNAMENT";
+const PLAYOFFS = "PLAYOFFS";
 
 // modes
-export const ONE_WAY = "ONE_WAY";
-export const ROUND_TRIP = "ROUND_TRIP";
-
-export const tournamentsFormatTypes = {
+const ONE_WAY = "ONE_WAY";
+const ROUND_TRIP = "ROUND_TRIP";
+const tournamentsFormatTypes = {
   [ROUND_ROBIN]: {
     name: "TypesTournaments.RoundRobin.Name",
     description: "TypesTournaments.RoundRobin.Description",
@@ -42,7 +41,7 @@ export const tournamentsFormatTypes = {
   },
 };
 
-export const tournamentsFormatOptions = {
+const tournamentsFormatOptions = {
   [ROUND_ROBIN]: [
     { name: "Participants", showIfIsStarted: true },
     { name: "Results", showIfIsStarted: false },
@@ -65,36 +64,63 @@ export const tournamentsFormatOptions = {
   ],
 };
 
-export const tournamentRoundTitleOptions = {
+const tournamentRoundTitleOptions = {
   1: "TypesRoundsTournament.Final",
   2: "TypesRoundsTournament.Semifinal",
   3: "TypesRoundsTournament.Quarter",
   4: "TypesRoundsTournament.16",
 };
 
-export const tournamentVictoryPointsOptions = [1, 2, 3];
-export const tournamentDefeatPointsOptions = [0, 1, 2];
-
-export const invitationStatusOptions = ["PENDING", "ACCEPTED", "REJECTED"];
-export const genderOptions = [
+const tournamentVictoryPointsOptions = [1, 2, 3];
+const tournamentDefeatPointsOptions = [0, 1, 2];
+const invitationStatusOptions = ["PENDING", "ACCEPTED", "REJECTED"];
+const genderOptions = [
   { value: "MALE", label: "EditProfile.Personal.Gender.Types.MALE" },
   { value: "FEMALE", label: "EditProfile.Personal.Gender.Types.FEMALE" },
   { value: "OTHER", label: "EditProfile.Personal.Gender.Types.OTHER" },
 ];
 
-export const dominantHandOptions = [
+const dominantHandOptions = [
   { value: "RIGHT", label: "EditProfile.Player.DominantHand.Types.RIGHT" },
   { value: "LEFT", label: "EditProfile.Player.DominantHand.Types.LEFT" },
   { value: "BOTH", label: "EditProfile.Player.DominantHand.Types.BOTH" },
 ];
 
-export const backhandOptions = [
+const backhandOptions = [
   { value: "ONE", label: "EditProfile.Player.Backhand.Types.ONE" },
   { value: "TWO", label: "EditProfile.Player.Backhand.Types.TWO" },
   { value: "NONE", label: "EditProfile.Player.Backhand.Types.NONE" },
 ];
 
-export const getLabelForOptions = (value, options) => {
+const getLabelForOptions = (value, options) => {
   const option = options.find((option) => option.value === value);
   return option ? option.label : "-";
 };
+
+const translateOptions = (options, translate) => {
+  return options.map((option) => ({
+    ...option,
+    label: translate(option.label),
+  }));
+};
+
+const types = {
+  ROUND_ROBIN,
+  SINGLE_TOURNAMENT,
+  PLAYOFFS,
+  ONE_WAY,
+  ROUND_TRIP,
+  tournamentsFormatTypes,
+  tournamentsFormatOptions,
+  tournamentRoundTitleOptions,
+  tournamentVictoryPointsOptions,
+  tournamentDefeatPointsOptions,
+  invitationStatusOptions,
+  genderOptions,
+  dominantHandOptions,
+  backhandOptions,
+  getLabelForOptions,
+  translateOptions,
+};
+
+export default types;

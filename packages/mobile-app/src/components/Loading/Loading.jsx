@@ -4,14 +4,14 @@ import { View, ActivityIndicator } from "react-native";
 // STYLES
 import styles from "./Loading.styled";
 
-// UTILS
-import { colors } from "utils/stylesUtil";
+// COMMONS
+import { styles as stylesCommons } from "@myracketpartner/common";
 
 // FUNCTION
 const Loading = () => {
   return (
     <View style={styles.container}>
-      <ActivityIndicator size="large" color={colors.green} />
+      <ActivityIndicator size="large" color={stylesCommons.colors.green} />
     </View>
   );
 };

@@ -1,15 +1,15 @@
-export const validateEmail = (email) => {
+const validateEmail = (email) => {
   var reg =
     /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   return reg.test(email);
 };
 
-export const validatePassword = (password) => {
+const validatePassword = (password) => {
   var reg = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{6,12}$/;
   return reg.test(password);
 };
 
-export const validateEditProfile = (values, t) => {
+const validateEditProfile = (values, t) => {
   const { firstName, lastName, height, weight } = values;
   const errors = {};
 
@@ -27,7 +27,7 @@ export const validateEditProfile = (values, t) => {
   return errors;
 };
 
-export const validateLogin = (values, t) => {
+const validateLogin = (values, t) => {
   const { email, password } = values;
   const errors = {};
 
@@ -42,7 +42,7 @@ export const validateLogin = (values, t) => {
   return errors;
 };
 
-export const validateRegister = (values, t) => {
+const validateRegister = (values, t) => {
   const { userName, email, password, confirmPassword } = values;
   const errors = {};
 
@@ -68,7 +68,7 @@ export const validateRegister = (values, t) => {
   return errors;
 };
 
-export const validateAddResult = (match, t) => {
+const validateAddResult = (match, t) => {
   const errors = [];
 
   if (!match.user2ID)
@@ -139,7 +139,7 @@ export const validateAddResult = (match, t) => {
   return errors;
 };
 
-export const validateSuggestions = (values, t) => {
+const validateSuggestions = (values, t) => {
   const { suggestions } = values;
   const errors = {};
 
@@ -150,3 +150,15 @@ export const validateSuggestions = (values, t) => {
 
   return errors;
 };
+
+const validates = {
+  validateEmail,
+  validatePassword,
+  validateEditProfile,
+  validateLogin,
+  validateRegister,
+  validateAddResult,
+  validateSuggestions,
+};
+
+export default validates;

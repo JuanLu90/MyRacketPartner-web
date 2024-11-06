@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-import { colors } from "utils/stylesUtil";
+import { styles as stylesCommons } from "@myracketpartner/common";
 
 const styles = StyleSheet.create({
   overlay: {
@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
     bottom: 0,
     left: 0,
     right: 0,
-    backgroundColor: colors.primary,
+    backgroundColor: stylesCommons.colors.primary,
     borderTopLeftRadius: 20,
     borderTopRightRadius: 20,
     padding: 30,
@@ -27,8 +27,8 @@ const styles = StyleSheet.create({
     position: "absolute",
     top: -15,
     right: 30,
-    backgroundColor: colors.primary,
-    borderColor: colors.orange,
+    backgroundColor: stylesCommons.colors.primary,
+    borderColor: stylesCommons.colors.orange,
     borderWidth: 1,
     borderRadius: 5,
     padding: 15,
@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     fontSize: 35,
     fontWeight: "bold",
-    color: colors.white,
+    color: stylesCommons.colors.white,
   },
   children: {
     flex: 1,
@@ -51,20 +51,20 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   buttonText: {
-    color: colors.primary,
+    color: stylesCommons.colors.primary,
     fontWeight: "bold",
     fontSize: 16,
     textAlign: "center",
   },
   sendButton: {
     flex: 1,
-    backgroundColor: colors.green,
+    backgroundColor: stylesCommons.colors.green,
     padding: 10,
     borderRadius: 5,
   },
   cancelButton: {
     backgroundColor: "transparent",
-    borderColor: colors.greyLight,
+    borderColor: stylesCommons.colors.greyLight,
     borderWidth: 1,
     padding: 10,
     borderRadius: 5,

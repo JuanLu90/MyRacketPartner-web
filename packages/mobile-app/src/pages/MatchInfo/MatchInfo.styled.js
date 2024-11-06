@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-import { colors } from "utils/stylesUtil";
+import { styles as stylesCommons } from "@myracketpartner/common";
 
 const styles = StyleSheet.create({
   container: {
@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
   },
   userName: {
     fontSize: 17,
-    color: colors.white,
+    color: stylesCommons.colors.white,
     fontWeight: "bold",
   },
   winner: {
@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   result: {
-    color: colors.white,
+    color: stylesCommons.colors.white,
     fontSize: 35,
     fontWeight: "bold",
   },
@@ -43,15 +43,15 @@ const styles = StyleSheet.create({
     padding: 15,
   },
   selectedOption: {
-    backgroundColor: colors.green,
+    backgroundColor: stylesCommons.colors.green,
   },
   optionText: {
-    color: colors.white,
+    color: stylesCommons.colors.white,
     fontWeight: "bold",
     fontSize: 16,
   },
   optionSelectedText: {
-    color: colors.primary,
+    color: stylesCommons.colors.primary,
   },
   userDefaultIcon: {
     width: 65,

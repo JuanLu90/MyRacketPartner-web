@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-import { colors } from "utils/stylesUtil";
+import { styles as stylesCommons } from "@myracketpartner/common";
 
 const styles = StyleSheet.create({
   firstBlock: {
@@ -16,20 +16,20 @@ const styles = StyleSheet.create({
   nameInfo: {
     fontSize: 35,
     fontWeight: "bold",
-    color: colors.white,
+    color: stylesCommons.colors.white,
   },
   wrapperInfo: {
     marginBottom: 30,
     paddingHorizontal: 20,
     paddingVertical: 10,
-    backgroundColor: colors.greyDarkSemiTransparent, // Adjust based on your theme
+    backgroundColor: stylesCommons.colors.greyDarkSemiTransparent, // Adjust based on your theme
   },
   sectionTitle: {
     marginVertical: 10,
     paddingHorizontal: 22,
     fontSize: 20,
     fontWeight: "bold",
-    color: colors.white,
+    color: stylesCommons.colors.white,
   },
   infoItem: {
     flexDirection: "row",
@@ -37,11 +37,11 @@ const styles = StyleSheet.create({
     marginVertical: 10,
   },
   infoLabel: {
-    color: colors.greyLight,
+    color: stylesCommons.colors.greyLight,
     fontSize: 16,
   },
   infoValue: {
-    color: colors.white,
+    color: stylesCommons.colors.white,
     fontSize: 16,
   },
   input: {
@@ -49,23 +49,23 @@ const styles = StyleSheet.create({
     marginTop: 7,
     marginBottom: 5,
     paddingHorizontal: 10,
-    color: colors.white,
+    color: stylesCommons.colors.white,
     borderWidth: 1,
-    borderColor: colors.greyDark,
+    borderColor: stylesCommons.colors.greyDark,
   },
   inputSelect: {
     height: 45,
     paddingHorizontal: 10,
-    color: colors.white,
+    color: stylesCommons.colors.white,
     borderWidth: 1,
-    borderColor: colors.greyDark,
+    borderColor: stylesCommons.colors.greyDark,
   },
   wrapperSendButton: {
     marginBottom: 20,
   },
   errorLabel: {
     fontSize: 17,
-    color: colors.orange,
+    color: stylesCommons.colors.orange,
   },
 });
 

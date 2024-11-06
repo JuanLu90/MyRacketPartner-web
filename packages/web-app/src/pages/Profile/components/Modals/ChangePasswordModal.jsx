@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+// DEPENDENCIES
+import { useState } from "react";
 import BottomSheetModal from "../../Generic/BottomSheetModal/BottomSheetModal";
 import CustomInput from "../../Generic/CustomInput/CustomInput";
 import { validatePassword } from "utils/validationUtil";
@@ -6,6 +7,7 @@ import { useDispatch } from "react-redux";
 import { changePasswordAction } from "store/slices/authSlice";
 import { toastAction } from "store/slices/alertSlice";
 
+// FUNCTION
 const ChangePasswordModal = (props) => {
   const dispatch = useDispatch();
 

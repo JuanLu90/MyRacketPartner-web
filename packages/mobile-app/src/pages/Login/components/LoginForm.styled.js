@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-import { colors } from "utils/stylesUtil";
+import { styles as stylesCommons } from "@myracketpartner/common";
 
 const styles = StyleSheet.create({
   input: {
@@ -7,7 +7,7 @@ const styles = StyleSheet.create({
     height: 45,
     marginBottom: 6,
     paddingHorizontal: 10,
-    color: colors.white,
+    color: stylesCommons.colors.white,
     borderWidth: 1,
   },
   sendButton: {
@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
     paddingVertical: 8,
     paddingHorizontal: 20,
     borderRadius: 12,
-    backgroundColor: colors.green,
+    backgroundColor: stylesCommons.colors.green,
   },
   textSenfButton: {
     fontSize: 18,
@@ -31,11 +31,11 @@ const styles = StyleSheet.create({
   textForgotPassword: {
     margin: "auto",
     fontSize: 18,
-    color: colors.green,
+    color: stylesCommons.colors.green,
   },
   errorLabel: {
     fontSize: 17,
-    color: colors.orange,
+    color: stylesCommons.colors.orange,
   },
 });
 

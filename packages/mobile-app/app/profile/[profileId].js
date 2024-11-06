@@ -2,13 +2,15 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Stack, useLocalSearchParams } from "expo-router";
-import { colors } from "utils/stylesUtil";
 
 // REDUX
 import { userProfileAction } from "store/slices/usersSlice";
 
 // COMPONENTS
 import ProfileComponent from "pages/Profile/Profile";
+
+// COMMONS
+import { styles } from "@myracketpartner/common";
 
 // FUNCTION
 const ProfileId = () => {
@@ -38,8 +40,8 @@ const ProfileId = () => {
     <>
       <Stack.Screen
         options={{
-          headerStyle: { backgroundColor: colors.green },
-          headerTintColor: colors.primary,
+          headerStyle: { backgroundColor: styles.colors.green },
+          headerTintColor: styles.colors.primary,
           headerLeft: () => {},
           headerRight: () => {},
           headerTitle: `${userInfo.userName} - Profile`,

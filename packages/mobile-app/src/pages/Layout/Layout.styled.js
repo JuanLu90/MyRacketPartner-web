@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-import { colors } from "utils/stylesUtil";
+import { styles as stylesCommons } from "@myracketpartner/common";
 
 const styles = StyleSheet.create({
   wrapper: {
@@ -8,13 +8,13 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    backgroundColor: colors.primary,
+    backgroundColor: stylesCommons.colors.primary,
     zIndex: 3,
   },
   logoIcon: {
     height: 40,
     cursor: "pointer",
-    fill: colors.green,
+    fill: stylesCommons.colors.green,
   },
   wrapperMenuIcon: {
     flexDirection: "row",
@@ -23,14 +23,14 @@ const styles = StyleSheet.create({
   menuIcon: {
     height: 40,
     cursor: "pointer",
-    fill: colors.green,
+    fill: stylesCommons.colors.green,
   },
   dropdownWrapper: {
     position: "absolute",
     top: 60,
     right: 0,
     width: 200,
-    backgroundColor: colors.green,
+    backgroundColor: stylesCommons.colors.green,
     overflow: "hidden",
   },
   listItem: {
@@ -39,16 +39,16 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     backgroundColor: "transparent",
     borderBottomWidth: 1,
-    borderBottomColor: colors.primary,
+    borderBottomColor: stylesCommons.colors.primary,
   },
   listItemText: {
-    color: colors.primary,
+    color: stylesCommons.colors.primary,
   },
   separator: {
     width: "100%",
     opacity: 0.4,
     borderTopWidth: 2,
-    borderTopColor: colors.greyDark,
+    borderTopColor: stylesCommons.colors.greyDark,
   },
   wrapperSelectLanguage: {
     flexDirection: "row",
@@ -65,7 +65,7 @@ const styles = StyleSheet.create({
     borderColor: "transparent",
   },
   languageOptionText: {
-    color: colors.primary,
+    color: stylesCommons.colors.primary,
     fontSize: 18,
   },
   languageOptionSelected: {
@@ -102,21 +102,21 @@ const styles = StyleSheet.create({
     right: 0,
     width: 250,
     height: "100%",
-    backgroundColor: colors.green,
+    backgroundColor: stylesCommons.colors.green,
     padding: 20,
     zIndex: 10,
   },
   menuItem: {
     marginBottom: 20,
     borderWidth: 1,
-    borderColor: colors.primary,
+    borderColor: stylesCommons.colors.primary,
   },
   menuText: {
     padding: 10,
-    color: colors.primary,
+    color: stylesCommons.colors.primary,
     fontSize: 18,
     borderWidth: 1,
-    borderColor: colors.primary,
+    borderColor: stylesCommons.colors.primary,
     textAlign: "center",
   },
   suggestionsLink: {

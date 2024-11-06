@@ -16,9 +16,8 @@ import {
 // IMAGES
 import UserDefaultImg from "images/user-default.png";
 
-// UTILS
-import { formatDate, formatHour } from "utils/dateUtil";
-
+// COMMONS
+import { dates } from "@myracketpartner/common";
 // FUNCTION
 const Match = ({ match }) => {
   const {
@@ -42,8 +41,8 @@ const Match = ({ match }) => {
       <Wrapper>
         <div>
           <DateStyle>
-            <span>{formatDate(matchDate)}</span>
-            <span>{formatHour(matchDate)}</span>
+            <span>{dates.formatDate(matchDate)}</span>
+            <span>{dates.formatHour(matchDate)}</span>
           </DateStyle>
           <Separator />
           <UsersWrapper>

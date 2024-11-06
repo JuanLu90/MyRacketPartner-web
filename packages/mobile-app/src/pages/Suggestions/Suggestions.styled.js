@@ -1,21 +1,21 @@
 import { StyleSheet } from "react-native";
-import { colors } from "utils/stylesUtil";
+import { styles as stylesCommons } from "@myracketpartner/common";
 
 const styles = StyleSheet.create({
   wrapper: {
     flex: 1,
     padding: 20,
-    backgroundColor: colors.primary,
+    backgroundColor: stylesCommons.colors.primary,
   },
   title: {
     marginBottom: 10,
     fontSize: 24,
     fontWeight: "bold",
-    color: colors.white,
+    color: stylesCommons.colors.white,
   },
   subtitle: {
     marginBottom: 25,
-    color: colors.greyLight,
+    color: stylesCommons.colors.greyLight,
     fontSize: 16,
   },
   textAreaInput: {
@@ -24,8 +24,8 @@ const styles = StyleSheet.create({
     marginBottom: 7,
     padding: 10,
     backgroundColor: "transparent",
-    color: colors.white,
-    borderColor: colors.greyDark,
+    color: stylesCommons.colors.white,
+    borderColor: stylesCommons.colors.greyDark,
     borderWidth: 1,
     borderRadius: 5,
     textAlignVertical: "top", // Ensure the text starts at the top in multiline TextInput
@@ -37,23 +37,23 @@ const styles = StyleSheet.create({
   },
   checkboxLabel: {
     marginLeft: 8,
-    color: colors.white,
+    color: stylesCommons.colors.white,
   },
   createSuggestionsButton: {
     alignSelf: "center",
     paddingVertical: 12,
     paddingHorizontal: 20,
-    backgroundColor: colors.orange,
+    backgroundColor: stylesCommons.colors.orange,
     borderRadius: 5,
   },
   buttonText: {
     fontSize: 18,
     fontWeight: "bold",
-    color: colors.primary,
+    color: stylesCommons.colors.primary,
   },
   errorLabel: {
     fontSize: 17,
-    color: colors.orange,
+    color: stylesCommons.colors.orange,
   },
 });
 

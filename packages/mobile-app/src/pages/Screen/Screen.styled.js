@@ -1,12 +1,12 @@
 import { StyleSheet } from "react-native";
-import { colors } from "utils/stylesUtil";
+import { styles as stylesCommons } from "@myracketpartner/common";
 
 const styles = StyleSheet.create({
   wrapper: {
     flex: 1,
-    backgroundColor: colors.primary,
+    backgroundColor: stylesCommons.colors.primary,
     borderWidth: 2,
-    borderColor: colors.green,
+    borderColor: stylesCommons.colors.green,
     borderTopWidth: 0,
     borderBottomWidth: 0,
     paddingVertical: 10,

@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-import { colors } from "utils/stylesUtil";
+import { styles as stylesCommons } from "@myracketpartner/common";
 
 const styles = StyleSheet.create({
   firstBlock: {
@@ -16,11 +16,11 @@ const styles = StyleSheet.create({
   nameInfo: {
     fontSize: 35,
     fontWeight: "bold",
-    color: colors.white,
+    color: stylesCommons.colors.white,
   },
   usernameInfo: {
     fontSize: 17,
-    color: colors.white,
+    color: stylesCommons.colors.white,
   },
   wrapperButtons: {
     display: "flex",

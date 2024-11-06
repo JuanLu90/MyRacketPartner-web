@@ -9,7 +9,6 @@ import {
   Button,
 } from "react-native";
 import { useSelector, useDispatch } from "react-redux";
-import { colors } from "utils/stylesUtil";
 import { useTranslation } from "react-i18next";
 import RNPickerSelect from "react-native-picker-select";
 import DateTimePicker from "@react-native-community/datetimepicker";
@@ -20,19 +19,14 @@ import { editUserInfoAction, userProfileAction } from "store/slices/usersSlice";
 // STYLES
 import styles from "./EditProfile.styled";
 
-// UTILS
-import {
-  backhandOptions,
-  dominantHandOptions,
-  genderOptions,
-  translateOptions,
-} from "utils/typesUtil";
-import { countries } from "utils/countriesUtil";
-import { validateEditProfile } from "utils/validationUtil";
-
 // COMMONS
-import { states } from "@myracketpartner/common";
-import { useFormValidation } from "@myracketpartner/common";
+import {
+  styles as stylesCommons,
+  types,
+  states,
+  useFormValidation,
+  validates,
+} from "@myracketpartner/common";
 
 // FUNCTION
 const EditProfile = ({ isAdmin, closeEditProfile, userId }) => {
@@ -52,7 +46,7 @@ const EditProfile = ({ isAdmin, closeEditProfile, userId }) => {
     handleChange,
     handleChangeBirthdate,
     handleValidation,
-  } = useFormValidation(initialState, validateEditProfile);
+  } = useFormValidation(initialState, validates.validateEditProfile);
 
   const onSubmit = async () => {
     const isValid = handleValidation();
@@ -86,11 +80,11 @@ const EditProfile = ({ isAdmin, closeEditProfile, userId }) => {
           marginBottom: 30,
           paddingVertical: 20,
           paddingHorizontal: 20,
-          backgroundColor: colors.greyDarkSemiTransparent,
+          backgroundColor: stylesCommons.colors.greyDarkSemiTransparent,
         }}
       >
         <View style={{ marginBottom: 20 }}>
-          <Text style={{ color: colors.greyLight }}>
+          <Text style={{ color: stylesCommons.colors.greyLight }}>
             {t("EditProfile.Personal.Email")}
           </Text>
           <TextInput
@@ -98,7 +92,7 @@ const EditProfile = ({ isAdmin, closeEditProfile, userId }) => {
               styles.input,
               {
                 width: generalWidth,
-                backgroundColor: colors.greyDark,
+                backgroundColor: stylesCommons.colors.greyDark,
                 opacity: 0.5,
               },
             ]}
@@ -108,7 +102,7 @@ const EditProfile = ({ isAdmin, closeEditProfile, userId }) => {
           />
         </View>
         <View style={{ marginBottom: 20 }}>
-          <Text style={{ color: colors.greyLight }}>
+          <Text style={{ color: stylesCommons.colors.greyLight }}>
             {t("EditProfile.Personal.Name")}
           </Text>
           <TextInput
@@ -116,20 +110,22 @@ const EditProfile = ({ isAdmin, closeEditProfile, userId }) => {
               styles.input,
               {
                 width: generalWidth,
-                borderColor: errors.firstName ? colors.orange : colors.greyDark,
+                borderColor: errors.firstName
+                  ? stylesCommons.colors.orange
+                  : stylesCommons.colors.greyDark,
               },
             ]}
             onChangeText={(value) => handleChange(value, "firstName")}
             value={formState?.firstName}
             placeholder={t("EditProfile.Personal.Name")}
-            placeholderTextColor={colors.greyDark}
+            placeholderTextColor={stylesCommons.colors.greyDark}
           />
           {errors.firstName && (
             <Text style={styles.errorLabel}>{errors.firstName}</Text>
           )}
         </View>
         <View style={{ marginBottom: 20 }}>
-          <Text style={{ color: colors.greyLight }}>
+          <Text style={{ color: stylesCommons.colors.greyLight }}>
             {t("EditProfile.Personal.Lastname")}
           </Text>
           <TextInput
@@ -137,20 +133,22 @@ const EditProfile = ({ isAdmin, closeEditProfile, userId }) => {
               styles.input,
               {
                 width: generalWidth,
-                borderColor: errors.lastName ? colors.orange : colors.greyDark,
+                borderColor: errors.lastName
+                  ? stylesCommons.colors.orange
+                  : stylesCommons.colors.greyDark,
               },
             ]}
             onChangeText={(value) => handleChange(value, "lastName")}
             value={formState?.lastName}
             placeholder={t("EditProfile.Personal.Lastname")}
-            placeholderTextColor={colors.greyDark}
+            placeholderTextColor={stylesCommons.colors.greyDark}
           />
           {errors.lastName && (
             <Text style={styles.errorLabel}>{errors.lastName}</Text>
           )}
         </View>
         {/* <View style={{ marginBottom: 20 }}>
-          <Text style={{ color: colors.greyLight }}>
+          <Text style={{ color: stylesCommons.colors.greyLight }}>
             {t("EditProfile.Personal.Birthdate")}
           </Text>
           <DateTimePicker
@@ -163,13 +161,13 @@ const EditProfile = ({ isAdmin, closeEditProfile, userId }) => {
           />
         </View> */}
         <View style={{ marginBottom: 20 }}>
-          <Text style={{ color: colors.greyLight }}>
+          <Text style={{ color: stylesCommons.colors.greyLight }}>
             {t("EditProfile.Personal.Gender.Title")}
           </Text>
           <RNPickerSelect
             onValueChange={(value) => handleChange(value, "gender")}
             value={formState.gender}
-            items={translateOptions(genderOptions, t)}
+            items={types.translateOptions(types.genderOptions, t)}
             style={{
               inputIOS: { ...styles.inputSelect, width: generalWidth },
               inputAndroid: { ...styles.inputSelect, width: generalWidth },
@@ -179,7 +177,7 @@ const EditProfile = ({ isAdmin, closeEditProfile, userId }) => {
           />
         </View>
         <View style={{ marginBottom: 20 }}>
-          <Text style={{ color: colors.greyLight }}>
+          <Text style={{ color: stylesCommons.colors.greyLight }}>
             {t("EditProfile.Personal.Height")}
           </Text>
           <TextInput
@@ -187,20 +185,22 @@ const EditProfile = ({ isAdmin, closeEditProfile, userId }) => {
               styles.input,
               {
                 width: generalWidth,
-                borderColor: errors.height ? colors.orange : colors.greyDark,
+                borderColor: errors.height
+                  ? stylesCommons.colors.orange
+                  : stylesCommons.colors.greyDark,
               },
             ]}
             onChangeText={(value) => handleChange(value, "height")}
             value={formState?.height && String(formState?.height)}
             placeholder={t("EditProfile.Personal.Height")}
-            placeholderTextColor={colors.greyDark}
+            placeholderTextColor={stylesCommons.colors.greyDark}
           />
           {errors.height && (
             <Text style={styles.errorLabel}>{errors.height}</Text>
           )}
         </View>
         <View style={{ marginBottom: 20 }}>
-          <Text style={{ color: colors.greyLight }}>
+          <Text style={{ color: stylesCommons.colors.greyLight }}>
             {t("EditProfile.Personal.Weight")}
           </Text>
           <TextInput
@@ -209,20 +209,22 @@ const EditProfile = ({ isAdmin, closeEditProfile, userId }) => {
               {
                 width: generalWidth,
 
-                borderColor: errors.weight ? colors.orange : colors.greyDark,
+                borderColor: errors.weight
+                  ? stylesCommons.colors.orange
+                  : stylesCommons.colors.greyDark,
               },
             ]}
             onChangeText={(value) => handleChange(value, "weight")}
             value={formState?.weight && String(formState?.weight)}
             placeholder={t("EditProfile.Personal.Weight")}
-            placeholderTextColor={colors.greyDark}
+            placeholderTextColor={stylesCommons.colors.greyDark}
           />
           {errors.weight && (
             <Text style={styles.errorLabel}>{errors.weight}</Text>
           )}
         </View>
         {/* <View style={{ marginBottom: 20 }}>
-          <Text style={{ color: colors.greyLight }}>
+          <Text style={{ color: stylesCommons.colors.greyLight }}>
             {t("Profile.Country")}
           </Text>
           <RNPickerSelect
@@ -244,17 +246,17 @@ const EditProfile = ({ isAdmin, closeEditProfile, userId }) => {
           marginBottom: 30,
           paddingVertical: 20,
           paddingHorizontal: 20,
-          backgroundColor: colors.greyDarkSemiTransparent,
+          backgroundColor: stylesCommons.colors.greyDarkSemiTransparent,
         }}
       >
         <View style={{ marginBottom: 20 }}>
-          <Text style={{ color: colors.greyLight }}>
+          <Text style={{ color: stylesCommons.colors.greyLight }}>
             {t("EditProfile.Player.DominantHand.Title")}
           </Text>
           <RNPickerSelect
             onValueChange={(value) => handleChange(value, "dominantHand")}
             value={formState.dominantHand}
-            items={translateOptions(dominantHandOptions, t)}
+            items={types.translateOptions(types.dominantHandOptions, t)}
             style={{
               inputIOS: { ...styles.inputSelect, width: generalWidth },
               inputAndroid: { ...styles.inputSelect, width: generalWidth },
@@ -264,13 +266,13 @@ const EditProfile = ({ isAdmin, closeEditProfile, userId }) => {
           />
         </View>
         <View style={{ marginBottom: 20 }}>
-          <Text style={{ color: colors.greyLight }}>
+          <Text style={{ color: stylesCommons.colors.greyLight }}>
             {t("EditProfile.Player.Backhand.Title")}
           </Text>
           <RNPickerSelect
             onValueChange={(value) => handleChange(value, "backhand")}
             value={formState.backhand}
-            items={translateOptions(backhandOptions, t)}
+            items={types.translateOptions(types.backhandOptions, t)}
             style={{
               inputIOS: { ...styles.inputSelect, width: generalWidth },
               inputAndroid: { ...styles.inputSelect, width: generalWidth },

@@ -10,13 +10,13 @@ import { loginAction, registerAction } from "store/slices/authSlice";
 // STYLES
 import styles from "./RegisterForm.styled";
 
-// UTILS
-import { colors } from "utils/stylesUtil";
-import { validateRegister } from "utils/validationUtil";
-
 // COMMONS
-import { states } from "@myracketpartner/common";
-import { useFormValidation } from "@myracketpartner/common";
+import {
+  styles as stylesCommons,
+  states,
+  useFormValidation,
+  validates,
+} from "@myracketpartner/common";
 
 // FUNCTION
 const RegisterForm = () => {
@@ -25,7 +25,10 @@ const RegisterForm = () => {
   const { t } = useTranslation();
 
   const { formState, errors, handleChange, handleValidation } =
-    useFormValidation(states.initialStateRegisterForm, validateRegister);
+    useFormValidation(
+      states.initialStateRegisterForm,
+      validates.validateRegister,
+    );
 
   const onSubmit = async () => {
     const isValid = handleValidation();
@@ -65,13 +68,15 @@ const RegisterForm = () => {
             styles.input,
             {
               width: generalWidth,
-              borderColor: errors.email ? colors.orange : colors.greyDark,
+              borderColor: errors.email
+                ? stylesCommons.colors.orange
+                : stylesCommons.colors.greyDark,
             },
           ]}
           onChangeText={(value) => handleChange(value, "userName")}
           value={formState.userName}
           placeholder={t("Register.Username")}
-          placeholderTextColor={colors.greyDark}
+          placeholderTextColor={stylesCommons.colors.greyDark}
         />
         {errors.userName ? (
           <Text style={styles.errorLabel}>{errors.userName}</Text>
@@ -83,13 +88,15 @@ const RegisterForm = () => {
             styles.input,
             {
               width: generalWidth,
-              borderColor: errors.password ? colors.orange : colors.greyDark,
+              borderColor: errors.password
+                ? stylesCommons.colors.orange
+                : stylesCommons.colors.greyDark,
             },
           ]}
           onChangeText={(value) => handleChange(value, "email")}
           value={formState.email}
           placeholder={t("Register.Email")}
-          placeholderTextColor={colors.greyDark}
+          placeholderTextColor={stylesCommons.colors.greyDark}
         />
         {errors.email ? (
           <Text style={styles.errorLabel}>{errors.email}</Text>
@@ -101,13 +108,15 @@ const RegisterForm = () => {
             styles.input,
             {
               width: generalWidth,
-              borderColor: errors.password ? colors.orange : colors.greyDark,
+              borderColor: errors.password
+                ? stylesCommons.colors.orange
+                : stylesCommons.colors.greyDark,
             },
           ]}
           onChangeText={(value) => handleChange(value, "password")}
           value={formState.password}
           placeholder={t("Register.Password")}
-          placeholderTextColor={colors.greyDark}
+          placeholderTextColor={stylesCommons.colors.greyDark}
           secureTextEntry={true}
         />
         {errors.password ? (
@@ -120,13 +129,15 @@ const RegisterForm = () => {
             styles.input,
             {
               width: generalWidth,
-              borderColor: errors.password ? colors.orange : colors.greyDark,
+              borderColor: errors.password
+                ? stylesCommons.colors.orange
+                : stylesCommons.colors.greyDark,
             },
           ]}
           onChangeText={(value) => handleChange(value, "confirmPassword")}
           value={formState.confirmPassword}
           placeholder={t("Register.ConfirmPassword")}
-          placeholderTextColor={colors.greyDark}
+          placeholderTextColor={stylesCommons.colors.greyDark}
           secureTextEntry={true}
         />
         {errors.confirmPassword ? (

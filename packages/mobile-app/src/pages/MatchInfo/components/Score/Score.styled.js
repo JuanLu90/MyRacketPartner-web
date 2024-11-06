@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-import { colors } from "utils/stylesUtil";
+import { styles as stylesCommons } from "@myracketpartner/common";
 
 const styles = StyleSheet.create({
   wrapperScore: {
@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
     overflow: "hidden",
   },
   userStyled: {
-    color: colors.white,
+    color: stylesCommons.colors.white,
     fontSize: 17,
     whiteSpace: "nowrap",
     overflow: "hidden",
@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
   },
   resultStyled: {
     marginVertical: 5,
-    color: colors.white,
+    color: stylesCommons.colors.white,
     fontSize: 17,
   },
 });

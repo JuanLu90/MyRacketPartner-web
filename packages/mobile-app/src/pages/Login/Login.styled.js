@@ -1,10 +1,10 @@
 import { StyleSheet } from "react-native";
-import { colors } from "utils/stylesUtil";
+import { styles as stylesCommons } from "@myracketpartner/common";
 
 const styles = StyleSheet.create({
   wrapper: { alignItems: "center", marginTop: 50 },
   textColor: {
-    color: colors.white,
+    color: stylesCommons.colors.white,
   },
   title: {
     fontSize: 35,
@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
   subtitle: {
     fontSize: 15,
     fontWeight: "bold",
-    color: colors.greyLight,
+    color: stylesCommons.colors.greyLight,
   },
   LogIn: {
     fontSize: 18,

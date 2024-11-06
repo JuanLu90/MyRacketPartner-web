@@ -4,7 +4,6 @@ import CustomInput from "../../Generic/CustomInput/CustomInput";
 import { editPlayerInfoAction } from "store/slices/usersSlice";
 import { useDispatch } from "react-redux";
 import { toastAction } from "store/slices/alertSlice";
-import { backhandOptions, dominantHandOptions } from "utils/typesUtil";
 // import DropDownInput from "../../Generic/DropDownInput/DropDownInput";
 
 const EditPersonalInformationModal = (props) => {

@@ -1,7 +1,6 @@
 // DEPENDENCIES
 import { useState } from "react";
 import { View, Text, Image, ScrollView, Pressable } from "react-native";
-import { colors } from "utils/stylesUtil";
 import { useTranslation } from "react-i18next";
 
 // COMPONENTS
@@ -16,14 +15,10 @@ import HandIcon from "images/svg-components/HandIcon";
 import styles from "./Profile.styled";
 
 // UTILS
-import { calculateAge, formatDate } from "utils/dateUtil";
 import { getCountry } from "utils/countriesUtil";
-import {
-  getLabelForOptions,
-  dominantHandOptions,
-  backhandOptions,
-} from "utils/typesUtil";
-// import { getFlagImage } from "utils/countriesUtil";
+
+// COMMONS
+import { styles as stylesCommons, dates, types } from "@myracketpartner/common";
 
 // FUNCTION
 const Profile = ({ userInfo, userIdPath, userId }) => {
@@ -105,28 +100,46 @@ const Profile = ({ userInfo, userIdPath, userId }) => {
                 <View
                   style={[
                     styles.userInfoChild,
-                    { backgroundColor: colors.greyLightSemiTransparent },
+                    {
+                      backgroundColor:
+                        stylesCommons.colors.greyLightSemiTransparent,
+                    },
                   ]}
                 >
-                  <Text style={{ color: colors.white, fontSize: 18 }}>
+                  <Text
+                    style={{ color: stylesCommons.colors.white, fontSize: 18 }}
+                  >
                     {t("Profile.Age")}
                   </Text>
                   <View>
-                    <Text style={{ color: colors.white, fontSize: 18 }}>
-                      {calculateAge(birthdate)} ({formatDate(birthdate)})
+                    <Text
+                      style={{
+                        color: stylesCommons.colors.white,
+                        fontSize: 18,
+                      }}
+                    >
+                      {dates.calculateAge(birthdate)} (
+                      {dates.formatDate(birthdate)})
                     </Text>
                   </View>
                 </View>
                 <View
                   style={[
                     styles.userInfoChild,
-                    { backgroundColor: colors.greyLightSemiTransparent },
+                    {
+                      backgroundColor:
+                        stylesCommons.colors.greyLightSemiTransparent,
+                    },
                   ]}
                 >
-                  <Text style={{ color: colors.white, fontSize: 18 }}>
+                  <Text
+                    style={{ color: stylesCommons.colors.white, fontSize: 18 }}
+                  >
                     {t("Profile.Height")}
                   </Text>
-                  <Text style={{ color: colors.white, fontSize: 18 }}>
+                  <Text
+                    style={{ color: stylesCommons.colors.white, fontSize: 18 }}
+                  >
                     {defaultValue(userInfo?.height)}
                     {userInfo?.height && " cm"}
                   </Text>
@@ -134,13 +147,20 @@ const Profile = ({ userInfo, userIdPath, userId }) => {
                 <View
                   style={[
                     styles.userInfoChild,
-                    { backgroundColor: colors.greyLightSemiTransparent },
+                    {
+                      backgroundColor:
+                        stylesCommons.colors.greyLightSemiTransparent,
+                    },
                   ]}
                 >
-                  <Text style={{ color: colors.white, fontSize: 18 }}>
+                  <Text
+                    style={{ color: stylesCommons.colors.white, fontSize: 18 }}
+                  >
                     {t("Profile.Weight")}
                   </Text>
-                  <Text style={{ color: colors.white, fontSize: 18 }}>
+                  <Text
+                    style={{ color: stylesCommons.colors.white, fontSize: 18 }}
+                  >
                     {defaultValue(userInfo?.weight)}
                     {userInfo?.weight && " kg"}
                   </Text>
@@ -148,14 +168,24 @@ const Profile = ({ userInfo, userIdPath, userId }) => {
                 <View
                   style={[
                     styles.userInfoChild,
-                    { backgroundColor: colors.greyLightSemiTransparent },
+                    {
+                      backgroundColor:
+                        stylesCommons.colors.greyLightSemiTransparent,
+                    },
                   ]}
                 >
-                  <Text style={{ color: colors.white, fontSize: 18 }}>
+                  <Text
+                    style={{ color: stylesCommons.colors.white, fontSize: 18 }}
+                  >
                     {t("Profile.Country")}
                   </Text>
                   <View style={styles.countryInfo}>
-                    <Text style={{ color: colors.white, fontSize: 18 }}>
+                    <Text
+                      style={{
+                        color: stylesCommons.colors.white,
+                        fontSize: 18,
+                      }}
+                    >
                       <Image
                         source={getCountry(userInfo.country)?.flag}
                         style={{ width: 25, height: 15, marginRight: 10 }}
@@ -167,18 +197,28 @@ const Profile = ({ userInfo, userIdPath, userId }) => {
               </View>
             </View>
 
-            <Text style={[styles.asPlayerTitle, { color: colors.white }]}>
+            <Text
+              style={[
+                styles.asPlayerTitle,
+                { color: stylesCommons.colors.white },
+              ]}
+            >
               {t("Profile.AsPlayer")}
             </Text>
 
-            <View style={[styles.playerBox, { borderColor: colors.greyDark }]}>
+            <View
+              style={[
+                styles.playerBox,
+                { borderColor: stylesCommons.colors.greyDark },
+              ]}
+            >
               <View style={styles.wrapperHandIcom}>
                 <HandIcon />
               </View>
               <View style={styles.wrapperHandIcom}>
                 <Text
                   style={{
-                    color: colors.white,
+                    color: stylesCommons.colors.white,
                     paddingVertical: 7,
                     fontSize: 18,
                   }}
@@ -187,38 +227,50 @@ const Profile = ({ userInfo, userIdPath, userId }) => {
                 </Text>
                 <Text
                   style={{
-                    color: colors.white,
+                    color: stylesCommons.colors.white,
                     fontWeight: "bold",
                     paddingVertical: 7,
                     fontSize: 18,
                   }}
                 >
                   {t(
-                    getLabelForOptions(
+                    types.getLabelForOptions(
                       userInfo?.dominantHand,
-                      dominantHandOptions,
+                      types.dominantHandOptions,
                     ),
                   )}
                 </Text>
               </View>
             </View>
-            <View style={[styles.playerBox, { borderColor: colors.greyDark }]}>
+            <View
+              style={[
+                styles.playerBox,
+                { borderColor: stylesCommons.colors.greyDark },
+              ]}
+            >
               <View style={styles.wrapperHandIcom}>
                 <HandIcon transform={[{ scaleX: -1 }]} />
               </View>
               <View>
-                <Text style={{ color: colors.white, fontSize: 18 }}>
+                <Text
+                  style={{ color: stylesCommons.colors.white, fontSize: 18 }}
+                >
                   {t("EditProfile.Player.Backhand.Title")}
                 </Text>
                 <Text
                   style={{
-                    color: colors.white,
+                    color: stylesCommons.colors.white,
                     fontWeight: "bold",
                     paddingVertical: 7,
                     fontSize: 18,
                   }}
                 >
-                  {t(getLabelForOptions(userInfo?.backhand, backhandOptions))}
+                  {t(
+                    types.getLabelForOptions(
+                      userInfo?.backhand,
+                      types.backhandOptions,
+                    ),
+                  )}
                 </Text>
               </View>
             </View>

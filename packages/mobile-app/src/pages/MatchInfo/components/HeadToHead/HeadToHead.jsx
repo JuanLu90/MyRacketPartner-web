@@ -2,7 +2,6 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { View, Text, ScrollView, StyleSheet } from "react-native";
-import { colors } from "utils/stylesUtil";
 
 // REDUX
 import { matchDetailsHeadToHeadAction } from "store/slices/matchesSlice";
@@ -10,8 +9,8 @@ import { matchDetailsHeadToHeadAction } from "store/slices/matchesSlice";
 // STYLES
 import styles from "./HeadToHead.styled";
 
-// UTILS
-import { formatDate } from "utils/dateUtil";
+// COMMONS
+import { dates } from "@myracketpartner/common";
 
 // FUNCTION
 const HeadToHead = (props) => {
@@ -51,7 +50,7 @@ const HeadToHead = (props) => {
             const { id, date, user1, user2, winnerID, sets } = match;
             return (
               <View key={id} style={styles.wrapperScore}>
-                <Text style={styles.date}>{formatDate(date)}</Text>
+                <Text style={styles.date}>{dates.formatDate(date)}</Text>
                 <View style={styles.usersWrapper}>
                   <Text
                     style={[

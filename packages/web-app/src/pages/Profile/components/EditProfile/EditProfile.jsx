@@ -20,18 +20,14 @@ import {
   Button,
 } from "./EditProfile.styled";
 
-// UTILS
-import {
-  backhandOptions,
-  dominantHandOptions,
-  genderOptions,
-} from "utils/typesUtil";
-import { countries } from "utils/countriesUtil";
-import { validateEditProfile } from "utils/validationUtil";
-
 // COMMONS
-import { states } from "@myracketpartner/common";
-import { useFormValidation } from "@myracketpartner/common";
+import {
+  states,
+  countries,
+  types,
+  useFormValidation,
+  validates,
+} from "@myracketpartner/common";
 
 // import ChangePasswordModal from "./Modals/ChangePasswordModal.jsx";
 // import EditPlayerInformationModal from "./Modals/EditPlayerInformationModal.jsx";
@@ -58,7 +54,7 @@ const EditProfile = ({ isAdmin, closeEditProfile }) => {
     handleChange,
     handleChangeBirthdate,
     handleValidation,
-  } = useFormValidation(initialState, validateEditProfile, true);
+  } = useFormValidation(initialState, validates.validateEditProfile, true);
 
   const onSubmit = async () => {
     const isValid = handleValidation();
@@ -132,7 +128,7 @@ const EditProfile = ({ isAdmin, closeEditProfile }) => {
               title={t("EditProfile.Personal.Gender.Title")}
               name="gender"
               handleChange={handleChange}
-              options={genderOptions}
+              options={types.genderOptions}
               value={formState.gender}
             />
           </div>
@@ -202,7 +198,7 @@ const EditProfile = ({ isAdmin, closeEditProfile }) => {
               title={t("EditProfile.Player.DominantHand.Title")}
               name="dominantHand"
               handleChange={handleChange}
-              options={dominantHandOptions}
+              options={types.dominantHandOptions}
               value={formState.dominantHand}
             />
           </div>
@@ -211,7 +207,7 @@ const EditProfile = ({ isAdmin, closeEditProfile }) => {
               title={t("EditProfile.Player.Backhand.Title")}
               name="backhand"
               handleChange={handleChange}
-              options={backhandOptions}
+              options={types.backhandOptions}
               value={formState.backhand}
             />
           </div>

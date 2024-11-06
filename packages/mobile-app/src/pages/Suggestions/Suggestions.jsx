@@ -2,7 +2,6 @@
 import { useState } from "react";
 import { View, Text, TextInput, Pressable, Dimensions } from "react-native";
 import CheckBox from "@react-native-community/checkbox";
-import { colors } from "utils/stylesUtil";
 import { useTranslation } from "react-i18next";
 import { useDispatch } from "react-redux";
 
@@ -12,12 +11,13 @@ import { sendSuggestionsAction } from "store/slices/usersSlice";
 // STYLES
 import styles from "./Suggestions.styled";
 
-// UTILS
-import { validateSuggestions } from "utils/validationUtil";
-
 // COMMONS
-import { states } from "@myracketpartner/common";
-import { useFormValidation } from "@myracketpartner/common";
+import {
+  styles as stylesCommons,
+  states,
+  useFormValidation,
+  validates,
+} from "@myracketpartner/common";
 
 // FUNCTION
 const Suggestions = () => {
@@ -25,7 +25,10 @@ const Suggestions = () => {
   const { t } = useTranslation();
 
   const { formState, setFormState, errors, handleChange, handleValidation } =
-    useFormValidation(states.initialStateSuggestions, validateSuggestions);
+    useFormValidation(
+      states.initialStateSuggestions,
+      validates.validateSuggestions,
+    );
 
   // const handleChange = (event) => {
   //   const { name, value, type, checked } = event.target;
@@ -73,14 +76,14 @@ const Suggestions = () => {
       <TextInput
         style={[
           styles.textAreaInput,
-          errors.suggestions && { borderColor: colors.orange },
+          errors.suggestions && { borderColor: stylesCommons.colors.orange },
         ]}
         multiline
         numberOfLines={4}
         value={formState.suggestions}
         onChangeText={(value) => handleChange(value, "suggestions")}
         placeholder={t("Suggestions.PlaceholderTextArea")}
-        placeholderTextColor={colors.greyDark}
+        placeholderTextColor={stylesCommons.colors.greyDark}
       />
       {errors.suggestions && (
         <Text style={styles.errorLabel}>{errors.suggestions}</Text>
@@ -92,9 +95,9 @@ const Suggestions = () => {
           onValueChange={(newValue) =>
             handleChange(newValue, "shareSuggestion")
           }
-          onTintColor={colors.orange}
-          onFillColor={colors.orange}
-          onCheckColor={colors.white}
+          onTintColor={stylesCommons.colors.orange}
+          onFillColor={stylesCommons.colors.orange}
+          onCheckColor={stylesCommons.colors.white}
           animationDuration="0"
           boxType="square"
           style={{ width: 20, height: 20 }}

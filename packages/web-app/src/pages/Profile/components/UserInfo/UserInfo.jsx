@@ -7,8 +7,10 @@ import { useTranslation } from "react-i18next";
 import { Wrapper, CountryInfo } from "./UserInfo.styled";
 
 // UTILS
-import { calculateAge, formatDate } from "utils/dateUtil";
 import { getCountryName } from "utils/countriesUtil";
+
+// COMMONS
+import { dates } from "@myracketpartner/common";
 
 // FUNCTION
 const UserInfo = () => {
@@ -46,8 +48,8 @@ const UserInfo = () => {
       <div>
         <span>{t("Profile.Age")}</span>
         <span>
-          {calculateAge(userInfo?.birthdate)} ({formatDate(userInfo?.birthdate)}
-          )
+          {dates.calculateAge(userInfo?.birthdate)} (
+          {dates.formatDate(userInfo?.birthdate)})
         </span>
       </div>
       <div>

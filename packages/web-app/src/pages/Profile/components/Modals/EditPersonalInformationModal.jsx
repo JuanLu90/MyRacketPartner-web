@@ -13,9 +13,8 @@ import CustomInput from "components/CustomInput/CustomInput";
 // import DropDownInput from "../../Generic/DropDownInput/DropdownInput";
 // import { toastAction } from "../../../redux/slices/alertSlice";
 
-// UTILS
-import { formatDateMySql } from "utils/dateUtil";
-// import { genderOptions } from "utils/typesUtil";
+// COMMONS
+import { dates } from "@myracketpartner/common";
 
 // FUNCTION
 const EditPersonalInformationModal = (props) => {
@@ -53,7 +52,7 @@ const EditPersonalInformationModal = (props) => {
     console.log(date);
     setState((prevState) => ({
       ...prevState,
-      birthdate: formatDateMySql(date),
+      birthdate: dates.formatDateMySql(date),
     }));
   };
 
@@ -76,7 +75,8 @@ const EditPersonalInformationModal = (props) => {
 
     setState({
       ...personalInfo,
-      birthdate: personalInfo?.birthdate && formatDateMySql(birthdateFormatted),
+      birthdate:
+        personalInfo?.birthdate && dates.formatDateMySql(birthdateFormatted),
     });
   }, [personalInfo]);
 

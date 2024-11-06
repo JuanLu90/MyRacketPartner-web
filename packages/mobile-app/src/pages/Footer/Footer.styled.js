@@ -1,12 +1,12 @@
 import { StyleSheet } from "react-native";
-import { colors } from "utils/stylesUtil";
+import { styles as stylesCommons } from "@myracketpartner/common";
 
 const styles = StyleSheet.create({
   wrapper: {
     flex: 1,
     alignItems: "center",
     padding: 20,
-    backgroundColor: colors.orange,
+    backgroundColor: stylesCommons.colors.orange,
     color: "black",
     textAlign: "center",
   },
@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
   separator: {
     width: "100%",
     borderTopWidth: 2,
-    borderTopColor: colors.primary,
+    borderTopColor: stylesCommons.colors.primary,
     marginVertical: 20,
   },
   donatePaypalImage: {

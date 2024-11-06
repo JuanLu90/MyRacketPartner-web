@@ -2,7 +2,6 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Stack, useLocalSearchParams } from "expo-router";
-import { colors } from "utils/stylesUtil";
 import { ActivityIndicator } from "react-native";
 
 // REDUX
@@ -10,6 +9,9 @@ import { matchDetailsAction } from "store/slices/matchesSlice";
 
 // COMPONENTS
 import MatchInfo from "pages/MatchInfo/MatchInfo";
+
+// COMMONS
+import { styles } from "@myracketpartner/common";
 
 // FUNCTION
 const MatchId = () => {
@@ -43,12 +45,14 @@ const MatchId = () => {
     <>
       <Stack.Screen
         options={{
-          headerStyle: { backgroundColor: colors.green },
-          headerTintColor: colors.primary,
+          headerStyle: { backgroundColor: styles.colors.green },
+          headerTintColor: styles.colors.primary,
           headerLeft: () => {},
           headerRight: () => {},
           headerTitle: isLoading
-            ? () => <ActivityIndicator size="small" color={colors.orange} />
+            ? () => (
+                <ActivityIndicator size="small" color={styles.colors.orange} />
+              )
             : `${matchDetails?.user1?.name} vs ${matchDetails?.user2?.name}`,
         }}
       />

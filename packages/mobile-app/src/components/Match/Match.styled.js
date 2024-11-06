@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-import { colors } from "utils/stylesUtil";
+import { styles as stylesCommons } from "@myracketpartner/common";
 
 const styles = StyleSheet.create({
   wrapper: {
@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
     fontSize: 12, // 0.75rem in px
   },
   dateText: {
-    color: colors.greyLight,
+    color: stylesCommons.colors.greyLight,
   },
   wrapperResult: {
     flexDirection: "row",
@@ -47,18 +47,18 @@ const styles = StyleSheet.create({
     whiteSpace: "nowrap",
     overflow: "hidden",
     textOverflow: "ellipsis",
-    color: colors.white,
+    color: stylesCommons.colors.white,
   },
   resultStyled: {
     fontWeight: "normal",
-    color: colors.white,
+    color: stylesCommons.colors.white,
     paddingHorizontal: 4,
   },
   winner: {
     fontWeight: "bold",
   },
   separator: {
-    backgroundColor: colors.greyLight,
+    backgroundColor: stylesCommons.colors.greyLight,
     height: 36,
     opacity: 0.6,
     width: 1,
